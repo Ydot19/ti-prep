@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  # run with docker-compose up
+  db:
+    image: postgres:14.2-alpine
+    restart: always
+    container_name: "lc_postgres"  # provides the container name
+    environment:
+      POSTGRES_DB: coder
+      POSTGRES_USER: coder
+      POSTGRES_PASSWORD: codes
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./temp/db:/var/lib/postgresql/data
+#      - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+
+#volumes:
+#  db:
+#    driver: local
