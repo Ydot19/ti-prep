@@ -1,3 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 CREATE TABLE IF NOT EXISTS problems (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     title TEXT NOT NULL,
@@ -5,9 +7,15 @@ CREATE TABLE IF NOT EXISTS problems (
     mastered boolean
 );
 
+CREATE TABLE IF NOT EXISTS problem_notes (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    problem_id UUID NOT NULL REFERENCES problems (id),
+    note jsonb NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS problem_attr (
-    id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
-    problem_id INTEGER REFERENCES problems (id),
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    problem_id UUID NOT NULL REFERENCES problems (id),
     classification TEXT NOT NULL
 );
 

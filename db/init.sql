@@ -1,3 +1,0 @@
-CREATE DATABASE leetcode_prep;
-GRANT ALL PRIVILEGES ON DATABASE leetcode_prep TO coder;
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
