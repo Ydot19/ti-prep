@@ -9,9 +9,24 @@ PG_DB_USER ?= coder
 PG_DB_PASSWORD ?= codes
 
 SCHEMA_FILENAME := leetcode_db_schema.sql
+PY_CMD := poetry run
+PY_ETL_DIR := $(shell pwd)/etl
+PY_TEST_DIR := $(shell pwd)/test
+PY_CLI_DIR := $(shell pwd)/cli
 
 clean:
 	rm -rf ./bin/*
+
+install-python:
+	# install production dependencies
+	poetry install --no-dev
+
+install-python-dev:
+	# install with dev dependencies
+	poetry install
+
+format-py:
+	$(PY_CMD) black $(PY_TEST_DIR) $(PY_CLI_DIR) $(PY_ETL_DIR)
 
 install-go-migrate:
 	export GOBIN=$(TOOLS_PATH); go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
@@ -31,12 +46,15 @@ create-db: start-postgresql
 	# psql must be installed
 	PGPASSWORD=${PG_DB_PASSWORD} psql -h ${PG_DB_HOSTNAME} -p ${PG_DB_PORT} -U ${PG_DB_USER} -c "drop database if exists ${PG_DB_NAME};"
 	PGPASSWORD=${PG_DB_PASSWORD} psql -h ${PG_DB_HOSTNAME} -p ${PG_DB_PORT} -U ${PG_DB_USER} -c "create database ${PG_DB_NAME};"
+
+database-schema:
 	PGPASSWORD=${PG_DB_PASSWORD} psql ${PG_DB_NAME} -h ${PG_DB_HOSTNAME} -p ${PG_DB_PORT} -U ${PG_DB_USER} -a -f db/${SCHEMA_FILENAME}
+
 migrate-db: create-db
 	$(MIGRATE) -path db/migrations -database "postgres://${PG_DB_USER}:${PG_DB_PASSWORD}@${PG_DB_HOSTNAME}:${PG_DB_PORT}/${PG_DB_NAME}?sslmode=disable" up
 	@PGPASSWORD=${PG_DB_PASSWORD} pg_dump -s -h ${PG_DB_HOSTNAME} -p ${PG_DB_PORT} -U ${PG_DB_USER}  ${PG_DB_NAME} > ./db/${SCHEMA_FILENAME}
 
-up: create-db
+up: create-db database-schema
 
 down:
 	docker-compose down

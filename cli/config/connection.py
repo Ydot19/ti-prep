@@ -10,7 +10,7 @@ def read_db_opts(name):
     :param name:
     :return:
     """
-    return os.getenv(f'{PREFIX}{name}')
+    return os.getenv(f"{PREFIX}{name}")
 
 
 class DbOptions:
@@ -18,4 +18,3 @@ class DbOptions:
     DB_NAME = read_db_opts("NAME")
     DB_USER = read_db_opts("USER")
     DB_PASSWORD = read_db_opts("PASSWORD")
-

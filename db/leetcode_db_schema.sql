@@ -92,6 +92,7 @@ ALTER TABLE public.problem_to_company OWNER TO coder;
 CREATE TABLE public.problems (
     id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
     title text NOT NULL,
+    tile_slug text NOT NULL,
     difficulty text NOT NULL,
     mastered boolean
 );

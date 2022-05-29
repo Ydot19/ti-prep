@@ -11,7 +11,7 @@ class DataLoader:
             "host": opts.DB_HOST,
             "database": opts.DB_NAME,
             "user": opts.DB_USER,
-            "password": opts.DB_PASSWORD
+            "password": opts.DB_PASSWORD,
         }
         self.__pg_conn = psycopg2.connect(**db_params)
 

@@ -1,0 +1,2813 @@
+{
+  "data": [
+    {
+      "company": "two-sigma",
+      "problems": [
+  {
+    "status": null,
+    "questionId": "43",
+    "questionFrontendId": "43",
+    "title": "Multiply Strings",
+    "titleSlug": "multiply-strings",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"515.3K\", \"totalSubmission\": \"1.4M\", \"totalAcceptedRaw\": 515282, \"totalSubmissionRaw\": 1362075, \"acRate\": \"37.8%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Simulation",
+        "translatedName": null,
+        "slug": "simulation",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "44",
+    "questionFrontendId": "44",
+    "title": "Wildcard Matching",
+    "titleSlug": "wildcard-matching",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"387.3K\", \"totalSubmission\": \"1.5M\", \"totalAcceptedRaw\": 387258, \"totalSubmissionRaw\": 1456877, \"acRate\": \"26.6%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Greedy",
+        "translatedName": null,
+        "slug": "greedy",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Recursion",
+        "translatedName": null,
+        "slug": "recursion",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "49",
+    "questionFrontendId": "49",
+    "title": "Group Anagrams",
+    "titleSlug": "group-anagrams",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.4M\", \"totalSubmission\": \"2.1M\", \"totalAcceptedRaw\": 1362238, \"totalSubmissionRaw\": 2116936, \"acRate\": \"64.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sorting",
+        "translatedName": null,
+        "slug": "sorting",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "56",
+    "questionFrontendId": "56",
+    "title": "Merge Intervals",
+    "titleSlug": "merge-intervals",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.4M\", \"totalSubmission\": \"3.2M\", \"totalAcceptedRaw\": 1441187, \"totalSubmissionRaw\": 3201364, \"acRate\": \"45.0%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sorting",
+        "translatedName": null,
+        "slug": "sorting",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "289",
+    "questionFrontendId": "289",
+    "title": "Game of Life",
+    "titleSlug": "game-of-life",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"341.9K\", \"totalSubmission\": \"522.4K\", \"totalAcceptedRaw\": 341859, \"totalSubmissionRaw\": 522399, \"acRate\": \"65.4%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Matrix",
+        "translatedName": null,
+        "slug": "matrix",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Simulation",
+        "translatedName": null,
+        "slug": "simulation",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "342",
+    "questionFrontendId": "342",
+    "title": "Power of Four",
+    "titleSlug": "power-of-four",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"298.7K\", \"totalSubmission\": \"677.4K\", \"totalAcceptedRaw\": 298710, \"totalSubmissionRaw\": 677413, \"acRate\": \"44.1%\"}",
+    "difficulty": "Easy",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Bit Manipulation",
+        "translatedName": null,
+        "slug": "bit-manipulation",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Recursion",
+        "translatedName": null,
+        "slug": "recursion",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "349",
+    "questionFrontendId": "349",
+    "title": "Intersection of Two Arrays",
+    "titleSlug": "intersection-of-two-arrays",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"666.5K\", \"totalSubmission\": \"963.4K\", \"totalAcceptedRaw\": 666503, \"totalSubmissionRaw\": 963424, \"acRate\": \"69.2%\"}",
+    "difficulty": "Easy",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "translatedName": null,
+        "slug": "two-pointers",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "translatedName": null,
+        "slug": "binary-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sorting",
+        "translatedName": null,
+        "slug": "sorting",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "380",
+    "questionFrontendId": "380",
+    "title": "Insert Delete GetRandom O(1)",
+    "titleSlug": "insert-delete-getrandom-o1",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"480.5K\", \"totalSubmission\": \"934.3K\", \"totalAcceptedRaw\": 480526, \"totalSubmissionRaw\": 934330, \"acRate\": \"51.4%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Randomized",
+        "translatedName": null,
+        "slug": "randomized",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "547",
+    "questionFrontendId": "547",
+    "title": "Number of Provinces",
+    "titleSlug": "number-of-provinces",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"463.9K\", \"totalSubmission\": \"741.1K\", \"totalAcceptedRaw\": 463938, \"totalSubmissionRaw\": 741116, \"acRate\": \"62.6%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Depth-First Search",
+        "translatedName": null,
+        "slug": "depth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Union Find",
+        "translatedName": null,
+        "slug": "union-find",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Graph",
+        "translatedName": null,
+        "slug": "graph",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "692",
+    "questionFrontendId": "692",
+    "title": "Top K Frequent Words",
+    "titleSlug": "top-k-frequent-words",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"380.2K\", \"totalSubmission\": \"698.5K\", \"totalAcceptedRaw\": 380165, \"totalSubmissionRaw\": 698525, \"acRate\": \"54.4%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Trie",
+        "translatedName": null,
+        "slug": "trie",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sorting",
+        "translatedName": null,
+        "slug": "sorting",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Heap (Priority Queue)",
+        "translatedName": null,
+        "slug": "heap-priority-queue",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Bucket Sort",
+        "translatedName": null,
+        "slug": "bucket-sort",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Counting",
+        "translatedName": null,
+        "slug": "counting",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "894",
+    "questionFrontendId": "710",
+    "title": "Random Pick with Blacklist",
+    "titleSlug": "random-pick-with-blacklist",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"28.9K\", \"totalSubmission\": \"86.9K\", \"totalAcceptedRaw\": 28907, \"totalSubmissionRaw\": 86875, \"acRate\": \"33.3%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "translatedName": null,
+        "slug": "binary-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sorting",
+        "translatedName": null,
+        "slug": "sorting",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Randomized",
+        "translatedName": null,
+        "slug": "randomized",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "912",
+    "questionFrontendId": "528",
+    "title": "Random Pick with Weight",
+    "titleSlug": "random-pick-with-weight",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"301K\", \"totalSubmission\": \"652.7K\", \"totalAcceptedRaw\": 301045, \"totalSubmissionRaw\": 652673, \"acRate\": \"46.1%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "translatedName": null,
+        "slug": "binary-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Prefix Sum",
+        "translatedName": null,
+        "slug": "prefix-sum",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Randomized",
+        "translatedName": null,
+        "slug": "randomized",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "954",
+    "questionFrontendId": "918",
+    "title": "Maximum Sum Circular Subarray",
+    "titleSlug": "maximum-sum-circular-subarray",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"118.2K\", \"totalSubmission\": \"317.5K\", \"totalAcceptedRaw\": 118207, \"totalSubmissionRaw\": 317509, \"acRate\": \"37.2%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Divide and Conquer",
+        "translatedName": null,
+        "slug": "divide-and-conquer",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Queue",
+        "translatedName": null,
+        "slug": "queue",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Monotonic Queue",
+        "translatedName": null,
+        "slug": "monotonic-queue",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1129",
+    "questionFrontendId": "1048",
+    "title": "Longest String Chain",
+    "titleSlug": "longest-string-chain",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"203.6K\", \"totalSubmission\": \"351.8K\", \"totalAcceptedRaw\": 203616, \"totalSubmissionRaw\": 351772, \"acRate\": \"57.9%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "translatedName": null,
+        "slug": "two-pointers",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1288",
+    "questionFrontendId": "1186",
+    "title": "Maximum Subarray Sum with One Deletion",
+    "titleSlug": "maximum-subarray-sum-with-one-deletion",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"32.2K\", \"totalSubmission\": \"79.1K\", \"totalAcceptedRaw\": 32154, \"totalSubmissionRaw\": 79068, \"acRate\": \"40.7%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1465",
+    "questionFrontendId": "1339",
+    "title": "Maximum Product of Splitted Binary Tree",
+    "titleSlug": "maximum-product-of-splitted-binary-tree",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"57.2K\", \"totalSubmission\": \"133.1K\", \"totalAcceptedRaw\": 57203, \"totalSubmissionRaw\": 133064, \"acRate\": \"43.0%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Tree",
+        "translatedName": null,
+        "slug": "tree",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Depth-First Search",
+        "translatedName": null,
+        "slug": "depth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Tree",
+        "translatedName": null,
+        "slug": "binary-tree",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  }
+]
+    },
+    {
+      "company":  "citadel",
+      "problems": [
+  {
+    "status": "ac",
+    "questionId": "1",
+    "questionFrontendId": "1",
+    "title": "Two Sum",
+    "titleSlug": "two-sum",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"6.7M\", \"totalSubmission\": \"13.7M\", \"totalAcceptedRaw\": 6676695, \"totalSubmissionRaw\": 13732273, \"acRate\": \"48.6%\"}",
+    "difficulty": "Easy",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": "ac",
+    "questionId": "12",
+    "questionFrontendId": "12",
+    "title": "Integer to Roman",
+    "titleSlug": "integer-to-roman",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"699.2K\", \"totalSubmission\": \"1.2M\", \"totalAcceptedRaw\": 699194, \"totalSubmissionRaw\": 1173918, \"acRate\": \"59.6%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "20",
+    "questionFrontendId": "20",
+    "title": "Valid Parentheses",
+    "titleSlug": "valid-parentheses",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"2.3M\", \"totalSubmission\": \"5.5M\", \"totalAcceptedRaw\": 2250557, \"totalSubmissionRaw\": 5507850, \"acRate\": \"40.9%\"}",
+    "difficulty": "Easy",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Stack",
+        "translatedName": null,
+        "slug": "stack",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "32",
+    "questionFrontendId": "32",
+    "title": "Longest Valid Parentheses",
+    "titleSlug": "longest-valid-parentheses",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"485K\", \"totalSubmission\": \"1.5M\", \"totalAcceptedRaw\": 485031, \"totalSubmissionRaw\": 1547270, \"acRate\": \"31.3%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Stack",
+        "translatedName": null,
+        "slug": "stack",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "39",
+    "questionFrontendId": "39",
+    "title": "Combination Sum",
+    "titleSlug": "combination-sum",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.1M\", \"totalSubmission\": \"1.7M\", \"totalAcceptedRaw\": 1092330, \"totalSubmissionRaw\": 1661837, \"acRate\": \"65.7%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Backtracking",
+        "translatedName": null,
+        "slug": "backtracking",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "42",
+    "questionFrontendId": "42",
+    "title": "Trapping Rain Water",
+    "titleSlug": "trapping-rain-water",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.1M\", \"totalSubmission\": \"2M\", \"totalAcceptedRaw\": 1127349, \"totalSubmissionRaw\": 1988743, \"acRate\": \"56.7%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "translatedName": null,
+        "slug": "two-pointers",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Stack",
+        "translatedName": null,
+        "slug": "stack",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Monotonic Stack",
+        "translatedName": null,
+        "slug": "monotonic-stack",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "44",
+    "questionFrontendId": "44",
+    "title": "Wildcard Matching",
+    "titleSlug": "wildcard-matching",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"387.3K\", \"totalSubmission\": \"1.5M\", \"totalAcceptedRaw\": 387259, \"totalSubmissionRaw\": 1456888, \"acRate\": \"26.6%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Greedy",
+        "translatedName": null,
+        "slug": "greedy",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Recursion",
+        "translatedName": null,
+        "slug": "recursion",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "46",
+    "questionFrontendId": "46",
+    "title": "Permutations",
+    "titleSlug": "permutations",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.2M\", \"totalSubmission\": \"1.6M\", \"totalAcceptedRaw\": 1175360, \"totalSubmissionRaw\": 1620302, \"acRate\": \"72.5%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Backtracking",
+        "translatedName": null,
+        "slug": "backtracking",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "49",
+    "questionFrontendId": "49",
+    "title": "Group Anagrams",
+    "titleSlug": "group-anagrams",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.4M\", \"totalSubmission\": \"2.1M\", \"totalAcceptedRaw\": 1362267, \"totalSubmissionRaw\": 2116969, \"acRate\": \"64.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sorting",
+        "translatedName": null,
+        "slug": "sorting",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "57",
+    "questionFrontendId": "57",
+    "title": "Insert Interval",
+    "titleSlug": "insert-interval",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"509.4K\", \"totalSubmission\": \"1.4M\", \"totalAcceptedRaw\": 509447, \"totalSubmissionRaw\": 1360497, \"acRate\": \"37.4%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "85",
+    "questionFrontendId": "85",
+    "title": "Maximal Rectangle",
+    "titleSlug": "maximal-rectangle",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"296.1K\", \"totalSubmission\": \"690.3K\", \"totalAcceptedRaw\": 296062, \"totalSubmissionRaw\": 690307, \"acRate\": \"42.9%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Stack",
+        "translatedName": null,
+        "slug": "stack",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Matrix",
+        "translatedName": null,
+        "slug": "matrix",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Monotonic Stack",
+        "translatedName": null,
+        "slug": "monotonic-stack",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "98",
+    "questionFrontendId": "98",
+    "title": "Validate Binary Search Tree",
+    "titleSlug": "validate-binary-search-tree",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.4M\", \"totalSubmission\": \"4.6M\", \"totalAcceptedRaw\": 1410856, \"totalSubmissionRaw\": 4609262, \"acRate\": \"30.6%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Tree",
+        "translatedName": null,
+        "slug": "tree",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Depth-First Search",
+        "translatedName": null,
+        "slug": "depth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search Tree",
+        "translatedName": null,
+        "slug": "binary-search-tree",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Tree",
+        "translatedName": null,
+        "slug": "binary-tree",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "105",
+    "questionFrontendId": "105",
+    "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+    "titleSlug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"710.1K\", \"totalSubmission\": \"1.2M\", \"totalAcceptedRaw\": 710087, \"totalSubmissionRaw\": 1227055, \"acRate\": \"57.9%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Divide and Conquer",
+        "translatedName": null,
+        "slug": "divide-and-conquer",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Tree",
+        "translatedName": null,
+        "slug": "tree",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Tree",
+        "translatedName": null,
+        "slug": "binary-tree",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "121",
+    "questionFrontendId": "121",
+    "title": "Best Time to Buy and Sell Stock",
+    "titleSlug": "best-time-to-buy-and-sell-stock",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"2.2M\", \"totalSubmission\": \"4M\", \"totalAcceptedRaw\": 2182108, \"totalSubmissionRaw\": 4032584, \"acRate\": \"54.1%\"}",
+    "difficulty": "Easy",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "126",
+    "questionFrontendId": "126",
+    "title": "Word Ladder II",
+    "titleSlug": "word-ladder-ii",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"290.3K\", \"totalSubmission\": \"1.1M\", \"totalAcceptedRaw\": 290314, \"totalSubmissionRaw\": 1071919, \"acRate\": \"27.1%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Backtracking",
+        "translatedName": null,
+        "slug": "backtracking",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "127",
+    "questionFrontendId": "127",
+    "title": "Word Ladder",
+    "titleSlug": "word-ladder",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"769.8K\", \"totalSubmission\": \"2.2M\", \"totalAcceptedRaw\": 769807, \"totalSubmissionRaw\": 2165087, \"acRate\": \"35.6%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "146",
+    "questionFrontendId": "146",
+    "title": "LRU Cache",
+    "titleSlug": "lru-cache",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.1M\", \"totalSubmission\": \"2.7M\", \"totalAcceptedRaw\": 1071299, \"totalSubmissionRaw\": 2679586, \"acRate\": \"40.0%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Linked List",
+        "translatedName": null,
+        "slug": "linked-list",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Doubly-Linked List",
+        "translatedName": null,
+        "slug": "doubly-linked-list",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "150",
+    "questionFrontendId": "150",
+    "title": "Evaluate Reverse Polish Notation",
+    "titleSlug": "evaluate-reverse-polish-notation",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"417.6K\", \"totalSubmission\": \"976.5K\", \"totalAcceptedRaw\": 417599, \"totalSubmissionRaw\": 976531, \"acRate\": \"42.8%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Stack",
+        "translatedName": null,
+        "slug": "stack",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "188",
+    "questionFrontendId": "188",
+    "title": "Best Time to Buy and Sell Stock IV",
+    "titleSlug": "best-time-to-buy-and-sell-stock-iv",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"246.4K\", \"totalSubmission\": \"728.8K\", \"totalAcceptedRaw\": 246420, \"totalSubmissionRaw\": 728760, \"acRate\": \"33.8%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "198",
+    "questionFrontendId": "198",
+    "title": "House Robber",
+    "titleSlug": "house-robber",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.1M\", \"totalSubmission\": \"2.4M\", \"totalAcceptedRaw\": 1139354, \"totalSubmissionRaw\": 2407767, \"acRate\": \"47.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "200",
+    "questionFrontendId": "200",
+    "title": "Number of Islands",
+    "titleSlug": "number-of-islands",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.6M\", \"totalSubmission\": \"2.9M\", \"totalAcceptedRaw\": 1574404, \"totalSubmissionRaw\": 2910244, \"acRate\": \"54.1%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Depth-First Search",
+        "translatedName": null,
+        "slug": "depth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Union Find",
+        "translatedName": null,
+        "slug": "union-find",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Matrix",
+        "translatedName": null,
+        "slug": "matrix",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "204",
+    "questionFrontendId": "204",
+    "title": "Count Primes",
+    "titleSlug": "count-primes",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"610.5K\", \"totalSubmission\": \"1.8M\", \"totalAcceptedRaw\": 610487, \"totalSubmissionRaw\": 1849388, \"acRate\": \"33.0%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Enumeration",
+        "translatedName": null,
+        "slug": "enumeration",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Number Theory",
+        "translatedName": null,
+        "slug": "number-theory",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "210",
+    "questionFrontendId": "210",
+    "title": "Course Schedule II",
+    "titleSlug": "course-schedule-ii",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"626.6K\", \"totalSubmission\": \"1.3M\", \"totalAcceptedRaw\": 626649, \"totalSubmissionRaw\": 1341771, \"acRate\": \"46.7%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Depth-First Search",
+        "translatedName": null,
+        "slug": "depth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Graph",
+        "translatedName": null,
+        "slug": "graph",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Topological Sort",
+        "translatedName": null,
+        "slug": "topological-sort",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "221",
+    "questionFrontendId": "221",
+    "title": "Maximal Square",
+    "titleSlug": "maximal-square",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"493.6K\", \"totalSubmission\": \"1.1M\", \"totalAcceptedRaw\": 493586, \"totalSubmissionRaw\": 1133898, \"acRate\": \"43.5%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Matrix",
+        "translatedName": null,
+        "slug": "matrix",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "230",
+    "questionFrontendId": "230",
+    "title": "Kth Smallest Element in a BST",
+    "titleSlug": "kth-smallest-element-in-a-bst",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"806.2K\", \"totalSubmission\": \"1.2M\", \"totalAcceptedRaw\": 806220, \"totalSubmissionRaw\": 1189251, \"acRate\": \"67.8%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Tree",
+        "translatedName": null,
+        "slug": "tree",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Depth-First Search",
+        "translatedName": null,
+        "slug": "depth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search Tree",
+        "translatedName": null,
+        "slug": "binary-search-tree",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Tree",
+        "translatedName": null,
+        "slug": "binary-tree",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "238",
+    "questionFrontendId": "238",
+    "title": "Product of Array Except Self",
+    "titleSlug": "product-of-array-except-self",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1.2M\", \"totalSubmission\": \"1.8M\", \"totalAcceptedRaw\": 1166019, \"totalSubmissionRaw\": 1820987, \"acRate\": \"64.0%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Prefix Sum",
+        "translatedName": null,
+        "slug": "prefix-sum",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "239",
+    "questionFrontendId": "239",
+    "title": "Sliding Window Maximum",
+    "titleSlug": "sliding-window-maximum",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"573.1K\", \"totalSubmission\": \"1.2M\", \"totalAcceptedRaw\": 573099, \"totalSubmissionRaw\": 1238813, \"acRate\": \"46.3%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Queue",
+        "translatedName": null,
+        "slug": "queue",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sliding Window",
+        "translatedName": null,
+        "slug": "sliding-window",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Heap (Priority Queue)",
+        "translatedName": null,
+        "slug": "heap-priority-queue",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Monotonic Queue",
+        "translatedName": null,
+        "slug": "monotonic-queue",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "241",
+    "questionFrontendId": "241",
+    "title": "Different Ways to Add Parentheses",
+    "titleSlug": "different-ways-to-add-parentheses",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"163.7K\", \"totalSubmission\": \"264.8K\", \"totalAcceptedRaw\": 163684, \"totalSubmissionRaw\": 264829, \"acRate\": \"61.8%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Recursion",
+        "translatedName": null,
+        "slug": "recursion",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Memoization",
+        "translatedName": null,
+        "slug": "memoization",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "259",
+    "questionFrontendId": "259",
+    "title": "3Sum Smaller",
+    "titleSlug": "3sum-smaller",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"116.6K\", \"totalSubmission\": \"231.6K\", \"totalAcceptedRaw\": 116636, \"totalSubmissionRaw\": 231550, \"acRate\": \"50.4%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": true,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "translatedName": null,
+        "slug": "two-pointers",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "translatedName": null,
+        "slug": "binary-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sorting",
+        "translatedName": null,
+        "slug": "sorting",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "264",
+    "questionFrontendId": "264",
+    "title": "Ugly Number II",
+    "titleSlug": "ugly-number-ii",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"259.3K\", \"totalSubmission\": \"572.1K\", \"totalAcceptedRaw\": 259298, \"totalSubmissionRaw\": 572051, \"acRate\": \"45.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Heap (Priority Queue)",
+        "translatedName": null,
+        "slug": "heap-priority-queue",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "282",
+    "questionFrontendId": "282",
+    "title": "Expression Add Operators",
+    "titleSlug": "expression-add-operators",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"182.9K\", \"totalSubmission\": \"467K\", \"totalAcceptedRaw\": 182941, \"totalSubmissionRaw\": 466978, \"acRate\": \"39.2%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Backtracking",
+        "translatedName": null,
+        "slug": "backtracking",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "285",
+    "questionFrontendId": "285",
+    "title": "Inorder Successor in BST",
+    "titleSlug": "inorder-successor-in-bst",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"265.7K\", \"totalSubmission\": \"561.9K\", \"totalAcceptedRaw\": 265695, \"totalSubmissionRaw\": 561915, \"acRate\": \"47.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": true,
+    "topicTags": [
+      {
+        "name": "Tree",
+        "translatedName": null,
+        "slug": "tree",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Depth-First Search",
+        "translatedName": null,
+        "slug": "depth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search Tree",
+        "translatedName": null,
+        "slug": "binary-search-tree",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Tree",
+        "translatedName": null,
+        "slug": "binary-tree",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "295",
+    "questionFrontendId": "295",
+    "title": "Find Median from Data Stream",
+    "titleSlug": "find-median-from-data-stream",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"460.9K\", \"totalSubmission\": \"914.4K\", \"totalAcceptedRaw\": 460856, \"totalSubmissionRaw\": 914352, \"acRate\": \"50.4%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Two Pointers",
+        "translatedName": null,
+        "slug": "two-pointers",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sorting",
+        "translatedName": null,
+        "slug": "sorting",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Heap (Priority Queue)",
+        "translatedName": null,
+        "slug": "heap-priority-queue",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Data Stream",
+        "translatedName": null,
+        "slug": "data-stream",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "297",
+    "questionFrontendId": "297",
+    "title": "Serialize and Deserialize Binary Tree",
+    "titleSlug": "serialize-and-deserialize-binary-tree",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"612K\", \"totalSubmission\": \"1.1M\", \"totalAcceptedRaw\": 612016, \"totalSubmissionRaw\": 1135721, \"acRate\": \"53.9%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Tree",
+        "translatedName": null,
+        "slug": "tree",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Depth-First Search",
+        "translatedName": null,
+        "slug": "depth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Tree",
+        "translatedName": null,
+        "slug": "binary-tree",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "301",
+    "questionFrontendId": "301",
+    "title": "Remove Invalid Parentheses",
+    "titleSlug": "remove-invalid-parentheses",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"350.2K\", \"totalSubmission\": \"746.5K\", \"totalAcceptedRaw\": 350177, \"totalSubmissionRaw\": 746488, \"acRate\": \"46.9%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Backtracking",
+        "translatedName": null,
+        "slug": "backtracking",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "322",
+    "questionFrontendId": "322",
+    "title": "Coin Change",
+    "titleSlug": "coin-change",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"1M\", \"totalSubmission\": \"2.5M\", \"totalAcceptedRaw\": 1019883, \"totalSubmissionRaw\": 2512310, \"acRate\": \"40.6%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "343",
+    "questionFrontendId": "343",
+    "title": "Integer Break",
+    "titleSlug": "integer-break",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"187.2K\", \"totalSubmission\": \"345.1K\", \"totalAcceptedRaw\": 187171, \"totalSubmissionRaw\": 345082, \"acRate\": \"54.2%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "359",
+    "questionFrontendId": "359",
+    "title": "Logger Rate Limiter",
+    "titleSlug": "logger-rate-limiter",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"226.5K\", \"totalSubmission\": \"301.8K\", \"totalAcceptedRaw\": 226472, \"totalSubmissionRaw\": 301838, \"acRate\": \"75.0%\"}",
+    "difficulty": "Easy",
+    "isPaidOnly": true,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "362",
+    "questionFrontendId": "362",
+    "title": "Design Hit Counter",
+    "titleSlug": "design-hit-counter",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"164.9K\", \"totalSubmission\": \"244.5K\", \"totalAcceptedRaw\": 164936, \"totalSubmissionRaw\": 244466, \"acRate\": \"67.5%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": true,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "translatedName": null,
+        "slug": "binary-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Queue",
+        "translatedName": null,
+        "slug": "queue",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "370",
+    "questionFrontendId": "370",
+    "title": "Range Addition",
+    "titleSlug": "range-addition",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"70.2K\", \"totalSubmission\": \"100.7K\", \"totalAcceptedRaw\": 70206, \"totalSubmissionRaw\": 100712, \"acRate\": \"69.7%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": true,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Prefix Sum",
+        "translatedName": null,
+        "slug": "prefix-sum",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "380",
+    "questionFrontendId": "380",
+    "title": "Insert Delete GetRandom O(1)",
+    "titleSlug": "insert-delete-getrandom-o1",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"480.5K\", \"totalSubmission\": \"934.3K\", \"totalAcceptedRaw\": 480530, \"totalSubmissionRaw\": 934341, \"acRate\": \"51.4%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Randomized",
+        "translatedName": null,
+        "slug": "randomized",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "460",
+    "questionFrontendId": "460",
+    "title": "LFU Cache",
+    "titleSlug": "lfu-cache",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"154.1K\", \"totalSubmission\": \"390.1K\", \"totalAcceptedRaw\": 154079, \"totalSubmissionRaw\": 390051, \"acRate\": \"39.5%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Linked List",
+        "translatedName": null,
+        "slug": "linked-list",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Doubly-Linked List",
+        "translatedName": null,
+        "slug": "doubly-linked-list",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "518",
+    "questionFrontendId": "518",
+    "title": "Coin Change 2",
+    "titleSlug": "coin-change-2",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"296.2K\", \"totalSubmission\": \"513.3K\", \"totalAcceptedRaw\": 296230, \"totalSubmissionRaw\": 513272, \"acRate\": \"57.7%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "560",
+    "questionFrontendId": "560",
+    "title": "Subarray Sum Equals K",
+    "titleSlug": "subarray-sum-equals-k",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"780.5K\", \"totalSubmission\": \"1.8M\", \"totalAcceptedRaw\": 780467, \"totalSubmissionRaw\": 1763752, \"acRate\": \"44.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Prefix Sum",
+        "translatedName": null,
+        "slug": "prefix-sum",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "588",
+    "questionFrontendId": "588",
+    "title": "Design In-Memory File System",
+    "titleSlug": "design-in-memory-file-system",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"66.9K\", \"totalSubmission\": \"138.1K\", \"totalAcceptedRaw\": 66914, \"totalSubmissionRaw\": 138059, \"acRate\": \"48.5%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": true,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Trie",
+        "translatedName": null,
+        "slug": "trie",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "628",
+    "questionFrontendId": "628",
+    "title": "Maximum Product of Three Numbers",
+    "titleSlug": "maximum-product-of-three-numbers",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"209.9K\", \"totalSubmission\": \"449.4K\", \"totalAcceptedRaw\": 209901, \"totalSubmissionRaw\": 449391, \"acRate\": \"46.7%\"}",
+    "difficulty": "Easy",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sorting",
+        "translatedName": null,
+        "slug": "sorting",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "695",
+    "questionFrontendId": "695",
+    "title": "Max Area of Island",
+    "titleSlug": "max-area-of-island",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"473.2K\", \"totalSubmission\": \"677.5K\", \"totalAcceptedRaw\": 473242, \"totalSubmissionRaw\": 677540, \"acRate\": \"69.8%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Depth-First Search",
+        "translatedName": null,
+        "slug": "depth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Union Find",
+        "translatedName": null,
+        "slug": "union-find",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Matrix",
+        "translatedName": null,
+        "slug": "matrix",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "718",
+    "questionFrontendId": "718",
+    "title": "Maximum Length of Repeated Subarray",
+    "titleSlug": "maximum-length-of-repeated-subarray",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"172.1K\", \"totalSubmission\": \"335.1K\", \"totalAcceptedRaw\": 172100, \"totalSubmissionRaw\": 335082, \"acRate\": \"51.4%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "translatedName": null,
+        "slug": "binary-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sliding Window",
+        "translatedName": null,
+        "slug": "sliding-window",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Rolling Hash",
+        "translatedName": null,
+        "slug": "rolling-hash",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Function",
+        "translatedName": null,
+        "slug": "hash-function",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "724",
+    "questionFrontendId": "724",
+    "title": "Find Pivot Index",
+    "titleSlug": "find-pivot-index",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"311.6K\", \"totalSubmission\": \"602K\", \"totalAcceptedRaw\": 311638, \"totalSubmissionRaw\": 602005, \"acRate\": \"51.8%\"}",
+    "difficulty": "Easy",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Prefix Sum",
+        "translatedName": null,
+        "slug": "prefix-sum",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "735",
+    "questionFrontendId": "735",
+    "title": "Asteroid Collision",
+    "titleSlug": "asteroid-collision",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"198.9K\", \"totalSubmission\": \"448.6K\", \"totalAcceptedRaw\": 198897, \"totalSubmissionRaw\": 448559, \"acRate\": \"44.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Stack",
+        "translatedName": null,
+        "slug": "stack",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "753",
+    "questionFrontendId": "752",
+    "title": "Open the Lock",
+    "titleSlug": "open-the-lock",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"163.2K\", \"totalSubmission\": \"295K\", \"totalAcceptedRaw\": 163220, \"totalSubmissionRaw\": 295017, \"acRate\": \"55.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "785",
+    "questionFrontendId": "772",
+    "title": "Basic Calculator III",
+    "titleSlug": "basic-calculator-iii",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"86.1K\", \"totalSubmission\": \"180.8K\", \"totalAcceptedRaw\": 86132, \"totalSubmissionRaw\": 180786, \"acRate\": \"47.6%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": true,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Stack",
+        "translatedName": null,
+        "slug": "stack",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Recursion",
+        "translatedName": null,
+        "slug": "recursion",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "856",
+    "questionFrontendId": "829",
+    "title": "Consecutive Numbers Sum",
+    "titleSlug": "consecutive-numbers-sum",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"68.8K\", \"totalSubmission\": \"167.4K\", \"totalAcceptedRaw\": 68783, \"totalSubmissionRaw\": 167398, \"acRate\": \"41.1%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Enumeration",
+        "translatedName": null,
+        "slug": "enumeration",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "898",
+    "questionFrontendId": "867",
+    "title": "Transpose Matrix",
+    "titleSlug": "transpose-matrix",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"133.7K\", \"totalSubmission\": \"219.1K\", \"totalAcceptedRaw\": 133673, \"totalSubmissionRaw\": 219072, \"acRate\": \"61.0%\"}",
+    "difficulty": "Easy",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Matrix",
+        "translatedName": null,
+        "slug": "matrix",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Simulation",
+        "translatedName": null,
+        "slug": "simulation",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "923",
+    "questionFrontendId": "887",
+    "title": "Super Egg Drop",
+    "titleSlug": "super-egg-drop",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"46K\", \"totalSubmission\": \"169.1K\", \"totalAcceptedRaw\": 45997, \"totalSubmissionRaw\": 169146, \"acRate\": \"27.2%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "translatedName": null,
+        "slug": "binary-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1023",
+    "questionFrontendId": "981",
+    "title": "Time Based Key-Value Store",
+    "titleSlug": "time-based-key-value-store",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"182K\", \"totalSubmission\": \"345.5K\", \"totalAcceptedRaw\": 182044, \"totalSubmissionRaw\": 345506, \"acRate\": \"52.7%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "translatedName": null,
+        "slug": "binary-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Design",
+        "translatedName": null,
+        "slug": "design",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1055",
+    "questionFrontendId": "1010",
+    "title": "Pairs of Songs With Total Durations Divisible by 60",
+    "titleSlug": "pairs-of-songs-with-total-durations-divisible-by-60",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"194K\", \"totalSubmission\": \"362.2K\", \"totalAcceptedRaw\": 193977, \"totalSubmissionRaw\": 362202, \"acRate\": \"53.6%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Counting",
+        "translatedName": null,
+        "slug": "counting",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1129",
+    "questionFrontendId": "1048",
+    "title": "Longest String Chain",
+    "titleSlug": "longest-string-chain",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"203.6K\", \"totalSubmission\": \"351.8K\", \"totalAcceptedRaw\": 203616, \"totalSubmissionRaw\": 351772, \"acRate\": \"57.9%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "translatedName": null,
+        "slug": "two-pointers",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "String",
+        "translatedName": null,
+        "slug": "string",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1171",
+    "questionFrontendId": "1091",
+    "title": "Shortest Path in Binary Matrix",
+    "titleSlug": "shortest-path-in-binary-matrix",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"228K\", \"totalSubmission\": \"514.7K\", \"totalAcceptedRaw\": 228009, \"totalSubmissionRaw\": 514696, \"acRate\": \"44.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "translatedName": null,
+        "slug": "breadth-first-search",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Matrix",
+        "translatedName": null,
+        "slug": "matrix",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1206",
+    "questionFrontendId": "1109",
+    "title": "Corporate Flight Bookings",
+    "titleSlug": "corporate-flight-bookings",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"39.7K\", \"totalSubmission\": \"67.3K\", \"totalAcceptedRaw\": 39666, \"totalSubmissionRaw\": 67330, \"acRate\": \"58.9%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Prefix Sum",
+        "translatedName": null,
+        "slug": "prefix-sum",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1370",
+    "questionFrontendId": "1248",
+    "title": "Count Number of Nice Subarrays",
+    "titleSlug": "count-number-of-nice-subarrays",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"54.8K\", \"totalSubmission\": \"93.4K\", \"totalAcceptedRaw\": 54778, \"totalSubmissionRaw\": 93371, \"acRate\": \"58.7%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "translatedName": null,
+        "slug": "hash-table",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Sliding Window",
+        "translatedName": null,
+        "slug": "sliding-window",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1511",
+    "questionFrontendId": "1395",
+    "title": "Count Number of Teams",
+    "titleSlug": "count-number-of-teams",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"86.9K\", \"totalSubmission\": \"125.3K\", \"totalAcceptedRaw\": 86873, \"totalSubmissionRaw\": 125281, \"acRate\": \"69.3%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "translatedName": null,
+        "slug": "dynamic-programming",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Binary Indexed Tree",
+        "translatedName": null,
+        "slug": "binary-indexed-tree",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "1638",
+    "questionFrontendId": "1515",
+    "title": "Best Position for a Service Centre",
+    "titleSlug": "best-position-for-a-service-centre",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"9.4K\", \"totalSubmission\": \"24.5K\", \"totalAcceptedRaw\": 9447, \"totalSubmissionRaw\": 24535, \"acRate\": \"38.5%\"}",
+    "difficulty": "Hard",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Math",
+        "translatedName": null,
+        "slug": "math",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Geometry",
+        "translatedName": null,
+        "slug": "geometry",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Randomized",
+        "translatedName": null,
+        "slug": "randomized",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  },
+  {
+    "status": null,
+    "questionId": "2012",
+    "questionFrontendId": "1882",
+    "title": "Process Tasks Using Servers",
+    "titleSlug": "process-tasks-using-servers",
+    "translatedTitle": null,
+    "stats": "{\"totalAccepted\": \"17.5K\", \"totalSubmission\": \"46.5K\", \"totalAcceptedRaw\": 17517, \"totalSubmissionRaw\": 46483, \"acRate\": \"37.7%\"}",
+    "difficulty": "Medium",
+    "isPaidOnly": false,
+    "topicTags": [
+      {
+        "name": "Array",
+        "translatedName": null,
+        "slug": "array",
+        "__typename": "TopicTagNode"
+      },
+      {
+        "name": "Heap (Priority Queue)",
+        "translatedName": null,
+        "slug": "heap-priority-queue",
+        "__typename": "TopicTagNode"
+      }
+    ],
+    "__typename": "QuestionNode"
+  }
+]}
+  ]
+}

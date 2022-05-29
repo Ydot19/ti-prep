@@ -3,6 +3,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE IF NOT EXISTS problems (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     title TEXT NOT NULL,
+    tile_slug TEXT NOT NULL,
     difficulty TEXT NOT NULL,
     mastered boolean
 );
