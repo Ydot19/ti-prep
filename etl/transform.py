@@ -80,7 +80,7 @@ class JsonDataTransformer:
         problem_to_company_df.loc[:, "id"] = problem_to_company_df.apply(
             lambda _: uuid.uuid4(), axis=1
         )
-        return problem_to_company_df
+        return problem_to_company_df[['id', 'problem_id', 'company_id']]
 
     def create_problem_attr_table_data(self) -> [pd.DataFrame | None]:
         """
@@ -108,4 +108,4 @@ class JsonDataTransformer:
             else:
                 df_combined_problem_attr = problem_attr_df
 
-        return df_combined_problem_attr
+        return df_combined_problem_attr[['id', 'problem_id', 'classification']]
