@@ -1,0 +1,6 @@
+name: leetcode-prep-leetcode-prep-infra
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: infra for leetcode prep leetcode-prep

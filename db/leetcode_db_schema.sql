@@ -30,6 +30,21 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;
 COMMENT ON EXTENSION "uuid-ossp" IS 'generate universally unique identifiers (UUIDs)';
 
 
+--
+-- Name: code_lang; Type: TYPE; Schema: public; Owner: coder
+--
+
+CREATE TYPE public.code_lang AS ENUM (
+    'python',
+    'javascript',
+    'typescript',
+    'kotlin',
+    'golang'
+);
+
+
+ALTER TYPE public.code_lang OWNER TO coder;
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -66,6 +81,7 @@ ALTER TABLE public.problem_attr OWNER TO coder;
 CREATE TABLE public.problem_notes (
     id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
     problem_id uuid NOT NULL,
+    lang public.code_lang,
     note jsonb NOT NULL
 );
 
@@ -92,7 +108,7 @@ ALTER TABLE public.problem_to_company OWNER TO coder;
 CREATE TABLE public.problems (
     id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
     title text NOT NULL,
-    tile_slug text NOT NULL,
+    title_slug text NOT NULL,
     difficulty text NOT NULL,
     mastered boolean
 );
@@ -158,6 +174,20 @@ ALTER TABLE ONLY public.problems
 
 ALTER TABLE ONLY public.schema_migrations
     ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: problem_attr_index; Type: INDEX; Schema: public; Owner: coder
+--
+
+CREATE INDEX problem_attr_index ON public.problem_attr USING btree (classification);
+
+
+--
+-- Name: problem_attr_problem_idx; Type: INDEX; Schema: public; Owner: coder
+--
+
+CREATE INDEX problem_attr_problem_idx ON public.problem_attr USING btree (problem_id);
 
 
 --

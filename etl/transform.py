@@ -56,6 +56,7 @@ class JsonDataTransformer:
         df.loc[:, "mastered"] = False
         df = df.rename({"problem_id": "id", "titleSlug": "title_slug"}, axis=1)
         df = df.drop_duplicates(subset=["id"])
+        df = df.reset_index(drop=True)
         return df
 
     def create_company_table_data(self) -> [pd.DataFrame | None]:
@@ -69,6 +70,7 @@ class JsonDataTransformer:
         companies_df = companies_df.rename(
             {"company_id": "id", "company_name": "name"}, axis=1
         )
+        companies_df = companies_df.reset_index(drop=True)
         return companies_df
 
     def create_problem_to_company_table_data(self) -> [pd.DataFrame | None]:
@@ -80,7 +82,8 @@ class JsonDataTransformer:
         problem_to_company_df.loc[:, "id"] = problem_to_company_df.apply(
             lambda _: uuid.uuid4(), axis=1
         )
-        return problem_to_company_df[['id', 'problem_id', 'company_id']]
+        problem_to_company_df = problem_to_company_df.reset_index(drop=True)
+        return problem_to_company_df[["id", "problem_id", "company_id"]]
 
     def create_problem_attr_table_data(self) -> [pd.DataFrame | None]:
         """
@@ -107,5 +110,5 @@ class JsonDataTransformer:
                 )
             else:
                 df_combined_problem_attr = problem_attr_df
-
-        return df_combined_problem_attr[['id', 'problem_id', 'classification']]
+        df_combined_problem_attr = df_combined_problem_attr.reset_index(drop=True)
+        return df_combined_problem_attr[["id", "problem_id", "classification"]]
