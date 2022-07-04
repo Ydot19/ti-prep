@@ -1,0 +1,22 @@
+{
+  "name": "prep-ui",
+  "version": "0.1.0",
+  "description": "visualize the practice problems for studying leetcode problems",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ydot19/lc-problem-sets.git"
+  },
+  "author": "Yadi M Abdalhalim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ydot19/lc-problem-sets/issues"
+  },
+  "homepage": "https://github.com/Ydot19/lc-problem-sets#readme"
+}
