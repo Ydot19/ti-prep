@@ -2,9 +2,8 @@ from typing import TypeVar
 
 from fastapi import FastAPI
 
-APP_NAME = "leetcode_prep_api"
+APP_NAME = "prep_api"
 VERSION = "0.1"
-PORT = 8100
 
 TCreateServer = TypeVar("TCreateServer", bound="CreateServer")
 

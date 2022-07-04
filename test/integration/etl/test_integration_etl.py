@@ -21,12 +21,13 @@ class TestLDataLoad(unittest.TestCase):
         cls.transformer: TJsonDataTransformer = JsonDataTransformer(jdr=jdr)
         cls.transformer.initialize()
 
-        connection_config = DbConnectionConfig(prefix="LC_DB_")
+        connection_config = DbConnectionConfig(prefix="PG_DB_")
         conn = psycopg2.connect(
             host=connection_config.DB_HOST,
             database=connection_config.DB_NAME,
             user=connection_config.DB_USER,
             password=connection_config.DB_PASSWORD,
+            port=connection_config.DB_PORT,
         )
 
         cls.loader = DataFramePGLoader(conn=conn)
@@ -62,10 +63,10 @@ class TestLDataLoad(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls) -> None:
-        cur = cls.loader.__conn.cursor()
+        cur = cls.loader.conn.cursor()
         cur.execute("DELETE FROM problem_to_company;")
         cur.execute("DELETE FROM problem_attr")
         cur.execute("DELETE FROM problems;")
         cur.execute("DELETE FROM company;")
-        cls.loader.__conn.commit()
-        cls.loader.__conn.close()
+        cls.loader.conn.commit()
+        cls.loader.conn.close()

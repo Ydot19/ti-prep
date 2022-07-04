@@ -1,8 +1,7 @@
-import uvicorn as uvicorn
 from fastapi import Query
 from prep_api.port.mapper import create_response_json
 from prep_api.app import create_application
-from prep_api.port import CreateServer, PORT
+from prep_api.port import CreateServer
 
 server = CreateServer().create_server().get_server()
 application = create_application()
@@ -42,7 +41,3 @@ def get_problems_by_classification(
         classification_title, start, limit
     )
     return create_response_json(resp)
-
-
-if __name__ == "__main__":
-    uvicorn.run(server, port=PORT)

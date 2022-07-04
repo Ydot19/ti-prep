@@ -19,3 +19,4 @@ class DbConnectionConfig:
         self.DB_NAME = read_db_opts(prefix, "NAME")
         self.DB_USER = read_db_opts(prefix, "USER")
         self.DB_PASSWORD = read_db_opts(prefix, "PASSWORD")
+        self.DB_PORT = read_db_opts(prefix, "PORT")

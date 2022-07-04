@@ -5,9 +5,9 @@ MIGRATE := $(TOOLS_PATH)/migrate
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 # PG Variables - see docker compose file
-export PG_DB_HOST := localhost
+export PG_DB_HOST ?= localhost
 export PG_DB_PORT ?= 5432
-export PG_DB_NAME := leetcode
+export PG_DB_NAME ?= leetcode
 export PG_DB_USER ?= coder
 export PG_DB_PASSWORD ?= codes
 
@@ -57,10 +57,25 @@ migrate-db: create-db
 	$(MIGRATE) -path db/migrations -database "postgres://${PG_DB_USER}:${PG_DB_PASSWORD}@${PG_DB_HOST}:${PG_DB_PORT}/${PG_DB_NAME}?sslmode=disable" up
 	@PGPASSWORD=${PG_DB_PASSWORD} pg_dump -s -h ${PG_DB_HOST} -p ${PG_DB_PORT} -U ${PG_DB_USER}  ${PG_DB_NAME} > ./db/${SCHEMA_FILENAME}
 
-database-data-load:
+
+up: create-db database-schema # brings up the database for unit and integration testing
+
+database-data-load: # loads the database with actual data
 	poetry run etl-to-db
 
-up: create-db database-schema
+start-etl:
+	docker-compose up --force-recreate --build -d etl
+
+stop-api:
+	docker-compose rm -s -v etl
+
+start-api:
+	docker-compose up --force-recreate --build -d api
+
+stop-api:
+	docker-compose rm -s -v api
+
+run-dev: up start-etl start-api # start all services for dev
 
 down:
 	docker-compose down

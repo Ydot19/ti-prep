@@ -4,20 +4,59 @@ services:
   db:
     image: postgres:14.2-alpine
     restart: always
-    container_name: "lc_postgres"  # provides the container name
+    container_name: "prep_postgres"  # provides the container name
     environment:
       POSTGRES_USER: coder
       POSTGRES_PASSWORD: codes
+    expose:
+      - 5432
     ports:
       - "5432:5432"
     volumes:
       - ./pgdata:/var/lib/postgresql/leetcode/data
-#      - ./db/leetcode_db_schema.sql:/docker-entrypoint-initdb.d/create_tables.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready"]
       interval: 10s
       timeout: 10s
       retries: 3
+  api:
+    container_name: "prep_api"
+#    restart: always
+    expose:
+      - 8080
+    ports:
+      - "8081:8080"
+    environment:
+      - API_ENV=ci
+      - API_DB_PREFIX=PREP_DB_
+      - PORT=8080
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+      args:
+        DB_HOST: db
+        DB_NAME: leetcode
+        DB_USER: coder
+        DB_PASSWORD: codes
+        DB_PORT: 5432
+        API_PORT: 8081
+
+  etl:
+    container_name: "pg_etl"
+    environment:
+      - API_ENV=ci
+      - DB_ENV_PREFIX=PG_DB
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: etl
+      args:
+        DB_HOST: db
+        DB_NAME: leetcode
+        DB_USER: coder
+        DB_PASSWORD: codes
+        DB_PORT: 5432
 
 
 networks:

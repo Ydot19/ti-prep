@@ -14,11 +14,18 @@ class ExtractTransformLoad:
         self.curr_dir = os.path.dirname(os.path.realpath(__file__))
         self.zipfile_path = f"{self.curr_dir}/data.zip"
         connection_config = DbConnectionConfig(prefix="PG_DB_")
+        print(connection_config.DB_HOST)
+        print(connection_config.DB_NAME)
+        print(connection_config.DB_USER)
+        print(connection_config.DB_PASSWORD)
+        print(connection_config.DB_PORT)
+
         self.conn = psycopg2.connect(
             host=connection_config.DB_HOST,
             database=connection_config.DB_NAME,
             user=connection_config.DB_USER,
             password=connection_config.DB_PASSWORD,
+            port=connection_config.DB_PORT,
         )
 
     def set_up(self):
