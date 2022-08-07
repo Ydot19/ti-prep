@@ -1,3 +1,3 @@
-# Leetcode Prep Cli
+# TI Prep Service
 
 
