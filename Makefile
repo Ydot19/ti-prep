@@ -66,7 +66,7 @@ database-data-load: # loads the database with actual data
 start-etl:
 	docker-compose up --force-recreate --build -d etl
 
-stop-api:
+stop-etl:
 	docker-compose rm -s -v etl
 
 start-api:

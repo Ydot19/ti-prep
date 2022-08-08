@@ -18,7 +18,7 @@ class TestApi(unittest.TestCase):
     def test_get_problems(self):
         # arrange - none
         # act
-        response = self.client.get("/problem")
+        response = self.client.get("/problems")
         # assert
         body = self._expect_201_ok(response)
         self.assertEqual(50, len(body["data"]["problems"]))
@@ -28,7 +28,7 @@ class TestApi(unittest.TestCase):
         pagination_start = 10
         limit = 100
         # act
-        response = self.client.get(f"/problem?start={pagination_start}&limit={limit}")
+        response = self.client.get(f"/problems?start={pagination_start}&limit={limit}")
         # assert
         body = self._expect_201_ok(response)
         self.assertEqual(limit, len(body["data"]["problems"]))
@@ -38,7 +38,7 @@ class TestApi(unittest.TestCase):
         problem_id = str(uuid.uuid4())
 
         # act
-        response = self.client.get(f"/problem/details/{problem_id}")
+        response = self.client.get(f"/problems/detail/{problem_id}")
         # assert
         self._expect_error_response(response, 404)
 
@@ -46,11 +46,11 @@ class TestApi(unittest.TestCase):
         # arrange
         start = math.floor(random.uniform(0, 1) * 399)
         limit = 1
-        get_problems_response = self.client.get(f"/problem?start={start}&limit={limit}")
+        get_problems_response = self.client.get(f"/problems?start={start}&limit={limit}")
         get_problems_content_body = self._expect_201_ok(get_problems_response)
         problem_id = get_problems_content_body["data"]["problems"][0]["id"]
         # act
-        response = self.client.get(f"/problem/details/{problem_id}")
+        response = self.client.get(f"/problems/detail/{problem_id}")
         # assert
         body = self._expect_201_ok(response)
         self.assertEqual(
@@ -62,7 +62,7 @@ class TestApi(unittest.TestCase):
     def test_get_companies(self):
         # arrange - none
         # act
-        response = self.client.get("/problem/company")
+        response = self.client.get("/problems/company")
         # assert
         body = self._expect_201_ok(response)
         self.assertGreater(len(body["data"]["companies"]), 0)
@@ -70,7 +70,7 @@ class TestApi(unittest.TestCase):
     def test_get_classification_counts_all(self):
         # arrange - none
         # act
-        response = self.client.get("/problem/classification")
+        response = self.client.get("/problems/classification")
         # assert
         body = self._expect_201_ok(response)
         self.assertGreater(len(body["data"]["classifications"]), 0)
@@ -78,12 +78,12 @@ class TestApi(unittest.TestCase):
 
     def test_get_classifications_counts_specific_company(self):
         # arrange
-        companies_response = self.client.get("/problem/company")
+        companies_response = self.client.get("/problems/company")
         cr_body = self._expect_201_ok(companies_response)
         company = cr_body["data"]["companies"][0]
         # act
         response = self.client.get(
-            f"/problem/classification?company_id={company['id']}"
+            f"/problems/classification?company_id={company['id']}"
         )
         # assert
         body = self._expect_201_ok(response)
@@ -95,7 +95,7 @@ class TestApi(unittest.TestCase):
         # arrange
         company_id = str(uuid.uuid4())
         # act
-        response = self.client.get(f"/problem/classification?company_id={company_id}")
+        response = self.client.get(f"/problems/classification?company_id={company_id}")
         # assert
         self._expect_error_response(response, 404)
 
@@ -103,7 +103,7 @@ class TestApi(unittest.TestCase):
         # arrange
         classification = "Array"
         # act
-        response = self.client.get(f"problem/classification/{classification}")
+        response = self.client.get(f"problems/classification/{classification}")
         # assert
         body = self._expect_201_ok(response)
         self.assertEqual(50, len(body["data"]["problems"]))
@@ -116,7 +116,7 @@ class TestApi(unittest.TestCase):
         limit = 200
         # act
         response = self.client.get(
-            f"problem/classification/{classification}?start={offset}&limit={limit}"
+            f"problems/classification/{classification}?start={offset}&limit={limit}"
         )
         # assert
         self._expect_error_response(response, 400)
@@ -125,7 +125,7 @@ class TestApi(unittest.TestCase):
         # arrange
         classification = "Something that does not exist"
         # act
-        response = self.client.get(f"/problem/classification/{classification}")
+        response = self.client.get(f"/problems/classification/{classification}")
         # assert
         self._expect_error_response(response, 404)
 
