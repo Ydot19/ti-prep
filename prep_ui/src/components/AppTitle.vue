@@ -9,12 +9,12 @@
 <style scoped>
 
   .slide-right {
-    animation-name: slide-right;
+    animation-name: slide-up;
     animation-duration: 2s;
     animation-fill-mode: forwards;
   }
-  
-  @keyframes slide-right {
+
+  @keyframes slide-up {
     from {
       visibility: visible;
       margin-top: 100%;

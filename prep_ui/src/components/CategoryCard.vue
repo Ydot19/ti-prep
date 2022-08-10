@@ -15,22 +15,21 @@
 </template>
 
 <script lang="ts">
-import router from "@/router"
+import router from '@/router';
 
-  export default {
-    name: "Category",
-    props: {
-      title: String,
-      url: String,
+export default {
+  name: 'CategoryCard',
+  props: {
+    title: String,
+    url: String,
+  },
+  methods: {
+    goToUrl: (url: string) => {
+      router.push({ path: url });
     },
-    methods: {
-      goToUrl: (url: string) =>{
-        router.push({ path: url})
-      }
-    }
-  }
-  
-  
+  },
+};
+
 </script>
 
 <style>

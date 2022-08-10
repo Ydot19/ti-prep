@@ -1,7 +1,6 @@
 <template>
   <nav>
-    
-    <p class="owner">Developed By: Yadi Abdalalim</p>
+    <p class="owner">Developed By: Yaadata Abdalhalim</p>
   </nav>
   <router-view/>
 </template>
@@ -27,6 +26,5 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
-
 
 </style>

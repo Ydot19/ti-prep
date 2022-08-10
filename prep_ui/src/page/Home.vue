@@ -2,7 +2,7 @@
   <div class="home">
     <AppTitle></AppTitle>
     <div class="home-selection">
-      <template  v-for="category in HomeSelectionItems">
+      <template  v-for="category in HomeSelectionItems" :key="category">
               <CategoryCard :title=category.name :url=category.url>
                 <div class="content" v-html="category.slot"></div>
               </CategoryCard>
@@ -14,51 +14,51 @@
 <script lang="ts">
 import CategoryCard from '@/components/CategoryCard.vue';
 import AppTitle from '@/components/AppTitle.vue';
-  
+
 export default {
   components: {
     AppTitle,
     CategoryCard,
   },
-  name: "Home",
-  data (){
+  name: 'HomePage',
+  data() {
     interface Selection {
-      name: String
-      url: String
+      name: string
+      url: string
       slot: any
     }
 
-    const HomeSelectionItems: Array<Selection> = new Array(
-    {
-      name: "Problems By Classification", 
-      url: "/problems",
-      slot: `
+    const HomeSelectionItems: Array<Selection> = [
+      {
+        name: 'Problems By Classification',
+        url: '/problems',
+        slot: `
       <p>Search Problems By LeetCode Classification such as the following...</p>
       <ul>
         <li> Array </li>
         <li> Dynamic Programming etc. </li>
       </ul>
 
-      `
-    },
-    {name: "Problems By Company", 
-    url: "/company",
-    slot: `<p>Problems By LeetCode Classifications Associated To A Specific Companies</p>`})
+      `,
+      },
+      {
+        name: 'Problems By Company',
+        url: '/company',
+        slot: '<p>Problems By LeetCode Classifications Associated To A Specific Companies</p>',
+      }];
     return {
-      HomeSelectionItems
-    }
-  }
+      HomeSelectionItems,
+    };
+  },
 
-}
+};
 
 </script>
-
-
 
 <style scoped>
   div.home-selection {
     display: grid;
-    grid-template-columns: "select_a select_b";
+    /*grid-template-columns: "select_a select_b";*/
     grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
     margin-left: 1rem;
