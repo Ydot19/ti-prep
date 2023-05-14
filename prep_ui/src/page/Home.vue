@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
-    <AppTitle></AppTitle>
+  <AppTitle />
+  <div class="home justify-center d-flex align-center">
     <div class="home-selection">
-      <template  v-for="category in HomeSelectionItems" :key="category">
-              <CategoryCard :title=category.name :url=category.url>
-                <div class="content" v-html="category.slot"></div>
-              </CategoryCard>
+      <template v-for="category in HomeSelectionItems" :key="category.name">
+          <CategoryCard :title=category.name :url=category.url>
+            <div class="content" v-html="category.slot" />
+          </CategoryCard>
       </template>
     </div>
   </div>
@@ -31,7 +31,7 @@ export default {
     const HomeSelectionItems: Array<Selection> = [
       {
         name: 'Problems By Classification',
-        url: '/problems',
+        url: '/problems/classifications',
         slot: `
       <p>Search Problems By LeetCode Classification such as the following...</p>
       <ul>
@@ -43,7 +43,7 @@ export default {
       },
       {
         name: 'Problems By Company',
-        url: '/company',
+        url: '/problems/companies',
         slot: '<p>Problems By LeetCode Classifications Associated To A Specific Companies</p>',
       }];
     return {
@@ -57,12 +57,9 @@ export default {
 
 <style scoped>
   div.home-selection {
-    display: grid;
-    /*grid-template-columns: "select_a select_b";*/
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 3rem;
+
   }
 </style>

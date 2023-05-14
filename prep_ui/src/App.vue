@@ -1,8 +1,32 @@
 <template>
-  <nav>
-    <p class="owner">Developed By: Yaadata Abdalhalim</p>
-  </nav>
-  <router-view/>
+  <v-app>
+    <v-app-bar class="nav-bar">
+      <v-btn value="HOME" href="/">
+        <v-icon>mdi-history</v-icon>
+
+        HOME
+      </v-btn>
+
+      <v-btn value="CLASSIFICATIONS" href="/problems/classifications">
+        <v-icon>mdi-heart</v-icon>
+
+        CLASSIFICATIONS
+      </v-btn>
+
+      <v-btn value="RANDOM">
+        <v-icon>mdi-map-marker</v-icon>
+
+        RANDOM PROBLEM
+      </v-btn>
+    </v-app-bar>
+    <div class="app-content">
+      <router-view/>
+    </div>
+    <footer>
+      <p class="owner">Developed By: Yaadata Abdalhalim</p>
+    </footer>
+
+  </v-app>
 </template>
 
 <style>
@@ -23,8 +47,14 @@ nav a {
   color: #2c3e50;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+footer {
+  font-weight: bold;
+  color: #1A2C34;
+  margin-top: 5%;
+}
+
+.app-content {
+  margin-top: 10%;
 }
 
 </style>

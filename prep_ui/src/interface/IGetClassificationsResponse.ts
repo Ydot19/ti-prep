@@ -1,10 +1,7 @@
-interface IClassificationDetail {
-  classification: string
-  count: number
-}
+import IClassificationRecord from '@/interface/IClassificationRecord';
 
 interface IClassificationResponseData {
-  classifications: Array<IClassificationDetail>
+  classifications: Array<IClassificationRecord>
   company: null | string
 }
 

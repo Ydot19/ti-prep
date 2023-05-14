@@ -1,6 +1,6 @@
-FROM python:3.10.2-bullseye as py-base
+FROM python:3.11.2-bullseye as py-base
 
-ENV POETRY_VERSION=1.1.13
+ENV POETRY_VERSION=1.3.2
 RUN pip install "poetry==$POETRY_VERSION"
 
 WORKDIR /code
@@ -31,7 +31,7 @@ RUN poetry install --no-ansi
 
 CMD ["make", "database-data-load"]
 
-FROM python:3.10.2-bullseye as api
+FROM python:3.11.2-bullseye as api
 ARG DB_HOST
 ARG DB_NAME
 ARG DB_USER

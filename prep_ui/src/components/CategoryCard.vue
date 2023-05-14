@@ -1,16 +1,18 @@
 <template>
   <div class="grow card">
-    <div class="card-header">
-      <p class="card-header-title">
+    <v-card width="400">
+      <template v-slot:title>
         {{title}}
-      </p>
-      <button v-on:click="goToUrl(url)" class="card-header-icon" aria-label="more options" onclick>
-        <fa-icon icon="fa-solid fa-angle-double-right"></fa-icon>
-      </button>
-    </div>
-    <div class="card-content">
-      <slot></slot>
-    </div>
+      </template>
+      <template v-slot:subtitle>
+        <v-btn v-on:click="goToUrl(url)" class="card-header-icon" aria-label="more options" onclick>
+          <fa-icon icon="fa-solid fa-angle-double-right" />
+        </v-btn>
+      </template>
+      <template v-slot:text>
+        <slot />
+      </template>
+    </v-card>
   </div>
 </template>
 
@@ -32,13 +34,9 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
   div.card {
     margin-bottom: 0.8rem;
-  }
-
-  div.card-content {
-    text-align: left;
   }
 
   div.grow { transition: all .2s ease-in-out; }

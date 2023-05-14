@@ -8,13 +8,21 @@ CREATE TABLE IF NOT EXISTS problems (
     mastered boolean
 );
 
-CREATE TYPE code_lang AS ENUM ('python', 'javascript', 'typescript', 'kotlin', 'golang');
-
 CREATE TABLE IF NOT EXISTS problem_notes (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     problem_id UUID NOT NULL REFERENCES problems (id),
-    lang code_lang,
     note jsonb NOT NULL
+);
+
+CREATE INDEX problem_notes_pidx on problem_notes(problem_id);
+
+CREATE TYPE code_lang AS ENUM ('python', 'rust', 'golang');
+
+CREATE TABLE IF NOT EXISTS problem_implementations (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    problem_id UUID NOT NULL REFERENCES problems (id),
+    lang code_lang,
+    implementation jsonb NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS problem_attr (
@@ -37,3 +45,4 @@ CREATE TABLE IF NOT EXISTS problem_to_company (
     problem_id UUID REFERENCES problems (ID),
     company_id UUID REFERENCES company (id)
 );
+

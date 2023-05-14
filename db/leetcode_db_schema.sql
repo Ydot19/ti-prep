@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.2
--- Dumped by pg_dump version 14.2
+-- Dumped by pg_dump version 14.7 (Homebrew)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -36,9 +36,7 @@ COMMENT ON EXTENSION "uuid-ossp" IS 'generate universally unique identifiers (UU
 
 CREATE TYPE public.code_lang AS ENUM (
     'python',
-    'javascript',
-    'typescript',
-    'kotlin',
+    'rust',
     'golang'
 );
 
@@ -75,13 +73,26 @@ CREATE TABLE public.problem_attr (
 ALTER TABLE public.problem_attr OWNER TO coder;
 
 --
+-- Name: problem_implementations; Type: TABLE; Schema: public; Owner: coder
+--
+
+CREATE TABLE public.problem_implementations (
+    id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
+    problem_id uuid NOT NULL,
+    lang public.code_lang,
+    implementation jsonb NOT NULL
+);
+
+
+ALTER TABLE public.problem_implementations OWNER TO coder;
+
+--
 -- Name: problem_notes; Type: TABLE; Schema: public; Owner: coder
 --
 
 CREATE TABLE public.problem_notes (
     id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
     problem_id uuid NOT NULL,
-    lang public.code_lang,
     note jsonb NOT NULL
 );
 
@@ -145,6 +156,14 @@ ALTER TABLE ONLY public.problem_attr
 
 
 --
+-- Name: problem_implementations problem_implementations_pkey; Type: CONSTRAINT; Schema: public; Owner: coder
+--
+
+ALTER TABLE ONLY public.problem_implementations
+    ADD CONSTRAINT problem_implementations_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: problem_notes problem_notes_pkey; Type: CONSTRAINT; Schema: public; Owner: coder
 --
 
@@ -198,11 +217,26 @@ CREATE UNIQUE INDEX problem_attr_uidx ON public.problem_attr USING btree (proble
 
 
 --
+-- Name: problem_notes_pidx; Type: INDEX; Schema: public; Owner: coder
+--
+
+CREATE INDEX problem_notes_pidx ON public.problem_notes USING btree (problem_id);
+
+
+--
 -- Name: problem_attr problem_attr_problem_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: coder
 --
 
 ALTER TABLE ONLY public.problem_attr
     ADD CONSTRAINT problem_attr_problem_id_fkey FOREIGN KEY (problem_id) REFERENCES public.problems(id);
+
+
+--
+-- Name: problem_implementations problem_implementations_problem_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: coder
+--
+
+ALTER TABLE ONLY public.problem_implementations
+    ADD CONSTRAINT problem_implementations_problem_id_fkey FOREIGN KEY (problem_id) REFERENCES public.problems(id);
 
 
 --
