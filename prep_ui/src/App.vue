@@ -54,7 +54,7 @@ footer {
 }
 
 .app-content {
-  margin-top: 10%;
+  margin-top: 13%;
 }
 
 </style>

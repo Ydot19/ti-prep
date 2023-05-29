@@ -48,18 +48,38 @@ export default {
 </script>
 
 <style scoped>
+  div.classifications {
+    justify-content: center;
+    align-items: center;
+  }
+
   div.classification-cards {
     display: grid;
+    justify-content: center;
     /*grid-template-columns: "select_a select_b";*/
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 8%;
+    margin-right: 8%;
     margin-top: 3rem;
   }
 
   div.category-card-slot {
     justify-content: center;
     text-align: center;
+  }
+
+  @media screen and (max-width:  1500px) {
+    div.classification-cards {
+      grid-template-columns: 1fr 1fr;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+  }
+
+  @media screen and (max-width:  875px) {
+    div.classification-cards {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
