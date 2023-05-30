@@ -35,7 +35,7 @@ div.code-block-node pre {
 }
 
 div.code-block-node pre code div {
-  text-indent: 0.3em;
+  text-indent: 0;
 }
 
 .hljs {

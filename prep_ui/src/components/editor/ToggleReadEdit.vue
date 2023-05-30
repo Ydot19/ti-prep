@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { watch, ref, defineComponent, reactive } from 'vue';
+import { watch, defineComponent, reactive } from 'vue';
 
 export default defineComponent({
   name: 'read-update-toggle',

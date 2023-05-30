@@ -20,7 +20,7 @@ import {
   faQuoteLeft,
   faCode,
   faLink,
-  faIndent,
+  faListOl,
 } from '@fortawesome/free-solid-svg-icons';
 // eslint-disable-next-line import/order
 import App from './App.vue';
@@ -57,7 +57,7 @@ library.add(faCloudArrowUp);
 library.add(faQuoteLeft);
 library.add(faCode);
 library.add(faLink);
-library.add(faIndent);
+library.add(faListOl);
 
 createApp(App)
   .use(store)

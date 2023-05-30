@@ -2,13 +2,16 @@
   <div v-if="editor" id="notes">
     <div class="editor-menu">
       <div class="left-side">
-        <v-btn size="x-small" @click="editor.chain().focus().toggleBold().run()" :disabled="!editorState.editable">
+        <v-btn title="cmd+shift+b" size="x-small" @click="editor.chain().focus().toggleBold().run()" :disabled="!editorState.editable">
           <b><fa-icon :icon="'bold'" /></b>
         </v-btn>
-        <v-btn size="x-small" @click="editor.chain().focus().toggleItalic().run()" :disabled="!editorState.editable">
+        <v-btn title="cmd+shift+i" size="x-small" @click="editor.chain().focus().toggleItalic().run()" :disabled="!editorState.editable">
           <fa-icon :icon="'italic'" />
         </v-btn>
-        <v-btn size="x-small" @click="editor.chain().focus().toggleBulletList().run()" :disabled="!editorState.editable">
+        <v-btn title="cmd+shit+7" size="x-small" @click="editor.chain().focus().toggleBulletList().run()" :disabled="!editorState.editable">
+          <fa-icon :icon="'list-ol'" />
+        </v-btn>
+        <v-btn title="cmd+shit+8" size="x-small" @click="editor.chain().focus().toggleBulletList().run()" :disabled="!editorState.editable">
           <fa-icon :icon="'list'" />
         </v-btn>
         <v-btn size="x-small" @click="editor.chain().focus().toggleHeading({ level: 3 }).run()" :disabled="!editorState.editable">
@@ -20,9 +23,6 @@
         <v-btn size="x-small" @click="editor.commands.toggleBlockquote()" :class="{ 'is-active': editor.isActive('blockquote') }" :disabled="!editorState.editable">
           <fa-icon :icon="'quote-left'" />
         </v-btn>
-        <v-btn size="x-small" @click="editor.commands.increaseIndent()" :class="{ 'is-active': editor.isActive('blockquote') }" :disabled="!editorState.editable">
-          <fa-icon :icon="'indent'" />
-        </v-btn>
         <v-btn size="x-small" @click="setLink" :disabled="!editorState.editable">
           <fa-icon :icon="'link'" />
         </v-btn>
@@ -31,16 +31,18 @@
           <fa-icon :icon="'fa-cloud-arrow-up'" />
         </v-btn>
       </div>
+      <div class="flex-auto-width">
+        <slot></slot>
+      </div>
       <div class="toggle">
         <p>Mode</p>
         <read-update-toggle @isEditable="updateEditableVal" />
       </div>
     </div>
-    <editor-content :editor="editor" />
-    <div class="code-block-button">
-      <v-btn size="x-small" @click="enableCodeBlock" :class="{ 'is-active': editor.isActive('codeBlock') }" :disabled="!editorState.editable">
-        <fa-icon :icon="'code'" />
-      </v-btn>
+    <div>
+      <editor-content :editor="editor" />
+    </div>
+    <div class="code-block-button" :class="{hidden: !codeEnabled}">
       <div class="language-selector" :class="[!codeBlockState.enabled ? 'hidden' : '']">
         <v-select
           :density="'compact'"
@@ -48,6 +50,7 @@
           :items=languages
           variant="solo-filled"
           v-model="codeBlockState.language"
+          :disabled="!editorState.editable"
         >
         </v-select>
       </div>
@@ -65,20 +68,14 @@ import kotlin from 'highlight.js/lib/languages/kotlin';
 import rust from 'highlight.js/lib/languages/rust';
 import python from 'highlight.js/lib/languages/python';
 import typescript from 'highlight.js/lib/languages/typescript';
-import plaintext from 'highlight.js/lib/languages/plaintext';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import ReadUpdateToggle from './ToggleReadEdit.vue';
 import CodeBlock from './CodeBlock.vue';
 import { Link } from '@tiptap/extension-link';
-import { Indent } from '@/components/editor/extensions/Indent';
-import {
-  BlockStyles,
-  MarginLeft,
-  TextFormats,
-  TextIndent
-} from '@/components/editor/extensions/TextStyles';
+import { TabKey } from '@/components/editor/extensions/TabKey';
+import { ListItemNoTabNav } from '@/components/editor/extensions/ListItem';
+import { Typography } from '@tiptap/extension-typography';
 
-lowlight.registerLanguage('plaintext', plaintext);
 lowlight.registerLanguage('golang', golang);
 lowlight.registerLanguage('kotlin', kotlin);
 lowlight.registerLanguage('rust', rust);
@@ -88,33 +85,45 @@ lowlight.registerLanguage('typescript', typescript);
 lowlight.registerAlias({
   golang: ['go'],
   python: ['py'],
+  kotlin: ['kt'],
   rust: ['rs'],
   typescript: ['ts'],
 });
-
 export default {
   name: 'text-editor',
   components: {
     ReadUpdateToggle,
     EditorContent,
   },
-  setup() {
+  emits: ['editingEnabled'],
+  props: {
+    codeEnabled: {
+      type: Boolean,
+      default: false,
+    },
+    content: {
+      type: String,
+      default: `<p>
+           I’m running Tiptap with Vue.js. 🎉
+      </p>
+      `,
+    },
+  },
+  setup(props: { codeEnabled: boolean; content: string}, { emit }) {
     const editorState = reactive({
       editable: false,
     });
 
     const codeBlockState = reactive({
-      enabled: false,
+      enabled: props.codeEnabled,
       language: 'python',
     });
     const editor = useEditor({
-      content: `<p>
-           I’m running Tiptap with Vue.js. 🎉
-      </p>
-      `,
+      content: props.content,
       extensions: [
         StarterKit.configure({
           codeBlock: false,
+          listItem: false,
         }),
         CodeBlockLowlight
           .extend({
@@ -132,12 +141,9 @@ export default {
           },
           validate: (href) => /^https?:\/\//.test(href),
         }),
-        ...TextFormats,
-        ...BlockStyles.map((v) => v.configure({ types: ['listItem', 'taskItem', 'heading', 'paragraph'] })),
-        TextIndent.configure({
-          types: ['paragraph'],
-        }),
-        Indent,
+        ListItemNoTabNav,
+        TabKey,
+        Typography,
       ],
       editable: editorState.editable,
     });
@@ -147,6 +153,7 @@ export default {
      */
     function updateEditableVal(val: boolean) {
       editorState.editable = val;
+      emit('editingEnabled', editorState.editable);
     }
 
     function enableCodeBlock() {
@@ -189,17 +196,12 @@ export default {
       editor.value?.setEditable(editorState.editable);
     });
 
-    watch(codeBlockState, () => {
-      console.log(codeBlockState.language);
-    });
-
     return {
       editor,
       editorState,
       codeBlockState,
       setLink,
       updateEditableVal,
-      enableCodeBlock,
       languages: lowlight.listLanguages(),
     };
   },
@@ -229,6 +231,14 @@ div.editor-menu div.left-side {
 div.editor-menu div.left-side div {
   position: absolute;
   bottom: 0px;
+}
+
+div.flex-auto-width {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.3em;
+  font-weight: bold;
+  font-style: italic;
 }
 
 div.bottom {

@@ -14,19 +14,31 @@
     </div>
     <v-container fluid>
       <v-row no-gutters justify="center">
-        <v-col cols="12" md="6" class="height-min-300px">
+        <v-col cols="12" md="4" class="height-min-300px">
           <v-sheet class="height-inherit">
-            <text-editor></text-editor>
+            <text-editor @editing-enabled="updateNotesEditability">
+              Notes
+            </text-editor>
             <div class="editor-nav-buttons">
-              <v-btn size="small"><fa-icon :icon="'fa-chevron-left'" /></v-btn>
-              <v-btn size="small"> 0 of 0</v-btn>
-              <v-btn size="small"><fa-icon :icon="'fa-chevron-right'" /></v-btn>
+              <v-btn size="small" :disabled="state.NotesEditingEnabled"><fa-icon :icon="'fa-chevron-left'" /></v-btn>
+              <v-btn size="small" :disabled="state.NotesEditingEnabled"> 0 of 0</v-btn>
+              <v-btn size="small" :disabled="state.NotesEditingEnabled"><fa-icon :icon="'fa-chevron-right'" /></v-btn>
             </div>
           </v-sheet>
         </v-col>
-        <v-col cols="12" md="6" class="height-min-300px">
+        <v-spacer></v-spacer>
+        <v-col cols="12" md="7" class="left-margin-1em height-min-300px">
           <v-sheet>
-            hello 2
+            <v-sheet class="height-inherit">
+              <text-editor @editing-enabled="updateCodeEditability" :code-enabled="true">
+                Code Implementations
+              </text-editor>
+              <div class="editor-nav-buttons">
+                <v-btn size="small" :disabled="state.CodeEditingEnabled"><fa-icon :icon="'fa-chevron-left'" /></v-btn>
+                <v-btn size="small" :disabled="state.CodeEditingEnabled"> 0 of 0</v-btn>
+                <v-btn size="small" :disabled="state.CodeEditingEnabled"><fa-icon :icon="'fa-chevron-right'" /></v-btn>
+              </div>
+            </v-sheet>
           </v-sheet>
         </v-col>
       </v-row>
@@ -37,7 +49,7 @@
 <script lang="ts">
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, reactive } from 'vue';
 import router from '@/router';
 import TextEditor from '@/components/editor/TextEditor.vue';
 
@@ -49,11 +61,27 @@ export default {
     const store = useStore();
     const { id } = route.params;
     const problemDetails = computed(() => store.getters.getProblemDetailsResponse);
+    const state = reactive({
+      NotesEditingEnabled: false,
+      CodeEditingEnabled: false,
+    });
+
+    function updateNotesEditability(target: boolean) {
+      state.NotesEditingEnabled = target;
+    }
+
+    function updateCodeEditability(target: boolean) {
+      state.CodeEditingEnabled = target;
+    }
     onMounted(() => {
       store.dispatch('fetchProblemDetails', id);
     });
+
     return {
       problemDetails,
+      state,
+      updateNotesEditability,
+      updateCodeEditability,
     };
   },
   methods: {
