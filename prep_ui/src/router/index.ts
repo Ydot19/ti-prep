@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../page/ProblemsByClassification.vue'),
   },
   {
-    path: '/problems/detail/:problem_id',
+    path: '/problems/detail/:id',
     name: 'specific problem details',
     component: () => import('../page/ProblemDetails.vue'),
   },

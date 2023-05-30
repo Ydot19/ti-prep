@@ -1,6 +1,7 @@
 <template>
   <div>
-    <p class="is-size-2">Classification: {{classification}}</p>
+    <p class="is-size-2">Classification</p>
+    <h1><b><i>{{classification}}</i></b></h1>
   </div>
   <div class="buttons is-centered">
     <v-row justify="center" align="center">
@@ -167,11 +168,6 @@ export default {
     margin-top: 30px;
   }
 
-  @media screen and (max-width: 940px) {
-    div.fitted-table {
-      justify-content: left;
-    }
-  }
   #scrollable-table {
     max-height: 75vh;
     overflow-y: scroll;
