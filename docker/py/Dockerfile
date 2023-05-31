@@ -5,8 +5,8 @@ RUN pip install "poetry==$POETRY_VERSION"
 
 WORKDIR /code
 
-COPY ./pyproject.toml ./poetry.lock /code/
-COPY ./common /code/common
+COPY ../../pyproject.toml ./poetry.lock /code/
+COPY ../../common /code/common
 RUN poetry config virtualenvs.in-project true
 RUN poetry install --no-ansi --no-dev
 
@@ -25,8 +25,8 @@ ENV PG_DB_HOST=$DB_HOST \
     PG_DB_PORT=$DB_PORT
 
 WORKDIR /code
-COPY ./etl /code/etl
-COPY ./Makefile /code/
+COPY ../../etl /code/etl
+COPY ../../Makefile /code/
 RUN poetry install --no-ansi
 
 CMD ["make", "database-data-load"]

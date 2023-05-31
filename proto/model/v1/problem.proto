@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package model;
+option go_package = "github.com/Ydot19/ti-prep/codegen/go/model/v1";
+
+enum Difficulty {
+  DIFFICULTY_UNKNOWN = 0;
+  DIFFICULTY_EASY = 1;
+  DIFFICULTY_MEDIUM = 2;
+  DIFFICULTY_HARD = 3;
+}
+
+message CategoryCompletion {
+  Difficulty difficulty = 1;
+  int32 mastered = 2;
+  int32 total = 3;
+}
+
+message Category {
+  string id = 1;
+  string name = 2;
+  CategoryCompletion easy = 3;
+  CategoryCompletion medium = 4;
+  CategoryCompletion hard = 5;
+}
+
+message Note {
+  string id = 1;
+}
+
+message Problem {
+  string id = 1;
+  string name = 2;
+  string title_slug = 3;
+  repeated string companies = 4;
+  bool mastered = 5;
+  bool bookmarked = 6;
+}
+

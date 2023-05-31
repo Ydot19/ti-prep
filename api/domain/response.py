@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Any, Dict, TypeVar, List, NamedTuple
-from prep_api.domain.errors import TAPIError
+from api.domain.errors import TAPIError
 
 TAPIResponseBuilder = TypeVar("TAPIResponseBuilder", bound="APIResponseBuilder")
 

@@ -1,0 +1,101 @@
+syntax = "proto3";
+
+import "model/v1/problem.proto";
+
+package rpc;
+option go_package = "github.com/Ydot19/ti-prep/codegen/go/rpc/v1";
+
+service NotesService {
+  rpc GetProblemCategories(GetProblemCategoriesRequest) returns (GetProblemCategoriesResponse) {}
+  rpc GetProblemsByCategory(GetProblemsByCategoryRequest) returns (GetProblemsByCategoryResponse){}
+  rpc GetProblemById(GetProblemByIdRequest) returns (GetProblemByIdResponse){}
+  rpc GetProblemNotesById(GetProblemNotesByIdRequest) returns (GetProblemNotesByIdResponse) {}
+  rpc GetImplementationNotesById(GetImplementationNotesByIdRequest) returns (GetImplementationNotesByIdResponse) {}
+  rpc CreateOrUpdateProblemDetails(CreateOrUpdateProblemDetailsRequest) returns (CreateOrUpdateProblemDetailsResponse) {}
+  rpc CreateOrUpdateProblemNotes(CreateOrUpdateProblemNotesRequest) returns (CreateOrUpdateProblemNotesResponse) {}
+  rpc GetAlgorithmCategories(GetAlgorithmCategoriesRequest) returns (GetAlgorithmCategoriesResponse) {}
+  rpc GetAlgorithmsByCategory(GetAlgorithmsByCategoryRequest) returns (GetAlgorithmsByCategoryResponse) {}
+  rpc CreateOrUpdateAlgorithm(CreateOrUpdateAlgorithmRequest) returns (CreateOrUpdateAlgorithmResponse) {}
+}
+
+message GetProblemCategoriesRequest {
+  int32 limit = 1;
+}
+
+message GetProblemCategoriesResponse {
+  model.Category details  = 1;
+}
+
+message GetProblemsByCategoryRequest {
+  int32 pagination_start = 1;
+  int32 pagination_end = 2;
+}
+
+message GetProblemsByCategoryResponse {
+  repeated model.Problem details = 1;
+}
+
+message GetProblemByIdRequest {
+  string id = 1;
+}
+
+message GetProblemByIdResponse {
+  model.Problem details = 1;
+  repeated string note_ids = 2;
+  repeated string implementation_ids = 3;
+}
+
+message GetProblemNotesByIdRequest {
+}
+
+message GetProblemNotesByIdResponse {
+
+}
+
+message GetImplementationNotesByIdRequest {
+
+}
+
+message GetImplementationNotesByIdResponse {
+
+}
+
+message CreateOrUpdateProblemDetailsRequest {
+
+}
+
+message CreateOrUpdateProblemDetailsResponse {
+
+}
+
+message CreateOrUpdateProblemNotesRequest {
+
+}
+
+message CreateOrUpdateProblemNotesResponse {
+
+}
+
+message GetAlgorithmCategoriesRequest {
+
+}
+
+message GetAlgorithmCategoriesResponse {
+
+}
+
+message GetAlgorithmsByCategoryRequest {
+
+}
+
+message GetAlgorithmsByCategoryResponse {
+
+}
+
+message CreateOrUpdateAlgorithmRequest {
+
+}
+
+message CreateOrUpdateAlgorithmResponse {
+
+}
