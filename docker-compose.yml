@@ -32,7 +32,7 @@ services:
       - PORT=8080
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker/py/Dockerfile
       target: api
       args:
         DB_HOST: db
@@ -49,7 +49,7 @@ services:
       - DB_ENV_PREFIX=PG_DB
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker/py/Dockerfile
       target: etl
       args:
         DB_HOST: db

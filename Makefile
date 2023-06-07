@@ -3,6 +3,11 @@ MIGRATE := $(TOOLS_PATH)/migrate
 
 # Python
 export PYTHONPATH=$PYTHONPATH:$(pwd)
+export PATH := $(TOOLS_PATH):$(PATH):$(TOOLS_PATH)/node_modules/.bin
+
+# Typescript
+PROTOC_GEN_TWIRP_BIN :="$(TOOLS_PATH)/node_modules/.bin/protoc-gen-twirp_ts"
+PROTOC_GEN_TS_BIN :="$(TOOLS_PATH)/node_modules/.bin/protoc-gen-ts"
 
 # PG Variables - see docker compose file
 export PG_DB_HOST ?= localhost
@@ -17,6 +22,8 @@ PY_ETL_DIR := $(shell pwd)/etl
 PY_TEST_DIR := $(shell pwd)/test
 PY_API_DIR := $(shell pwd)/prep_api
 
+.PHONY: codegen
+
 clean:
 	rm -rf ./bin/*
 
@@ -28,11 +35,26 @@ install-python-deps:
 	# install with dev dependencies
 	poetry install
 
+install-tools:
+	mkdir -p bin/
+	export GOBIN=$(TOOLS_PATH); cat tools.go | grep _ | awk -F'"' '{print $$2}' | xargs -tI % go install %
+	pnpm install twirp-ts --prefix ./bin
+	pnpm install @protobuf-ts/plugin@next --prefix ./bin
+
+codegen:
+	rm -rf codegen
+	mkdir -p codegen/go codegen/ts
+	protoc --twirp_out=./codegen/go --twirp_opt=paths=source_relative \
+        --go_out=./codegen/go --go_opt=paths=source_relative \
+        --plugin=protoc-gen-ts=$(PROTOC_GEN_TS_BIN) \
+	    --plugin=protoc-gen-twirp_ts=$(PROTOC_GEN_TWIRP_BIN) \
+        --ts_opt=generate_dependencies \
+		--ts_out=codegen/ts \
+		--twirp_ts_out=codegen/ts \
+		--proto_path=./proto ./proto/**/**/*.proto
+
 format-py:
 	$(PY_CMD) black $(PY_TEST_DIR) $(PY_API_DIR) $(PY_ETL_DIR)
-
-install-go-migrate:
-	export GOBIN=$(TOOLS_PATH); go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
 
 install-postgresql:
 	which psql || brew install postgresql

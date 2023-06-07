@@ -1,6 +1,6 @@
 from fastapi.responses import JSONResponse
 
-from prep_api.domain.response import TAPIResponseBuilder
+from api.domain.response import TAPIResponseBuilder
 
 
 def create_response_json(resp: TAPIResponseBuilder):

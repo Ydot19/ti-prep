@@ -1,8 +1,8 @@
 from typing import TypeVar
 
-from prep_api.adapter import repository
-from prep_api.app.helper import app_response
-from prep_api.domain._types.responses import (
+from api.adapter import repository
+from api.app.helper import app_response
+from api.domain._types.responses import (
     GetProblemByID,
     GetProblemsByClassification,
     Company,
@@ -10,7 +10,7 @@ from prep_api.domain._types.responses import (
     Companies,
     Classification,
 )
-from prep_api.domain.errors import (
+from api.domain.errors import (
     NotFoundError,
     DataInConsistencyError,
     InvalidArgumentError,
