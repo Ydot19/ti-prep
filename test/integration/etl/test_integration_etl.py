@@ -18,7 +18,7 @@ class TestLDataLoad(unittest.TestCase):
     def setUpClass(cls) -> None:
         dotenv.load_dotenv()
         jdr = JsonDataReader(filepath=fixtures.get_sample_data_json_filepath())
-        cls.transformer: TJsonDataTransformer = JsonDataTransformer(jdr=jdr)
+        cls.transformer: JsonDataTransformer = JsonDataTransformer(jdr=jdr)
         cls.transformer.initialize()
 
         connection_config = DbConnectionConfig(prefix="PG_DB_")
@@ -57,15 +57,15 @@ class TestLDataLoad(unittest.TestCase):
         self.assertIsNone(err)
 
     def test_problem_attr_table(self):
-        df = self.transformer.create_problem_attr_table_data()
-        err = self.loader.bulk_upload("problem_attr", df)
+        df = self.transformer.create_problem_category_table_data()
+        err = self.loader.bulk_upload("problem_category", df)
         self.assertIsNone(err)
 
     @classmethod
     def tearDownClass(cls) -> None:
         cur = cls.loader.conn.cursor()
         cur.execute("DELETE FROM problem_to_company;")
-        cur.execute("DELETE FROM problem_attr")
+        cur.execute("DELETE FROM problem_category")
         cur.execute("DELETE FROM problems;")
         cur.execute("DELETE FROM company;")
         cls.loader.conn.commit()

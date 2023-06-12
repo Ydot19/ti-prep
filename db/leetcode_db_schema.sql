@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.2
--- Dumped by pg_dump version 14.7 (Homebrew)
+-- Dumped by pg_dump version 14.8 (Homebrew)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -37,11 +37,25 @@ COMMENT ON EXTENSION "uuid-ossp" IS 'generate universally unique identifiers (UU
 CREATE TYPE public.code_lang AS ENUM (
     'python',
     'rust',
-    'golang'
+    'golang',
+    'typescript',
+    'kotlin'
 );
 
 
 ALTER TYPE public.code_lang OWNER TO coder;
+
+--
+-- Name: topic_type; Type: TYPE; Schema: public; Owner: coder
+--
+
+CREATE TYPE public.topic_type AS ENUM (
+    'algorithm',
+    'concept'
+);
+
+
+ALTER TYPE public.topic_type OWNER TO coder;
 
 SET default_tablespace = '';
 
@@ -60,17 +74,17 @@ CREATE TABLE public.company (
 ALTER TABLE public.company OWNER TO coder;
 
 --
--- Name: problem_attr; Type: TABLE; Schema: public; Owner: coder
+-- Name: problem_category; Type: TABLE; Schema: public; Owner: coder
 --
 
-CREATE TABLE public.problem_attr (
+CREATE TABLE public.problem_category (
     id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
     problem_id uuid NOT NULL,
-    classification text NOT NULL
+    category text NOT NULL
 );
 
 
-ALTER TABLE public.problem_attr OWNER TO coder;
+ALTER TABLE public.problem_category OWNER TO coder;
 
 --
 -- Name: problem_implementations; Type: TABLE; Schema: public; Owner: coder
@@ -121,7 +135,8 @@ CREATE TABLE public.problems (
     title text NOT NULL,
     title_slug text NOT NULL,
     difficulty text NOT NULL,
-    mastered boolean
+    mastered boolean,
+    bookmarked boolean
 );
 
 
@@ -140,6 +155,22 @@ CREATE TABLE public.schema_migrations (
 ALTER TABLE public.schema_migrations OWNER TO coder;
 
 --
+-- Name: topic; Type: TABLE; Schema: public; Owner: coder
+--
+
+CREATE TABLE public.topic (
+    id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
+    kind public.topic_type NOT NULL,
+    name text NOT NULL,
+    description text,
+    topic_category text NOT NULL,
+    note jsonb
+);
+
+
+ALTER TABLE public.topic OWNER TO coder;
+
+--
 -- Name: company company_pkey; Type: CONSTRAINT; Schema: public; Owner: coder
 --
 
@@ -148,11 +179,11 @@ ALTER TABLE ONLY public.company
 
 
 --
--- Name: problem_attr problem_attr_pkey; Type: CONSTRAINT; Schema: public; Owner: coder
+-- Name: problem_category problem_category_pkey; Type: CONSTRAINT; Schema: public; Owner: coder
 --
 
-ALTER TABLE ONLY public.problem_attr
-    ADD CONSTRAINT problem_attr_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.problem_category
+    ADD CONSTRAINT problem_category_pkey PRIMARY KEY (id);
 
 
 --
@@ -196,24 +227,32 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
--- Name: problem_attr_index; Type: INDEX; Schema: public; Owner: coder
+-- Name: topic topic_pkey; Type: CONSTRAINT; Schema: public; Owner: coder
 --
 
-CREATE INDEX problem_attr_index ON public.problem_attr USING btree (classification);
-
-
---
--- Name: problem_attr_problem_idx; Type: INDEX; Schema: public; Owner: coder
---
-
-CREATE INDEX problem_attr_problem_idx ON public.problem_attr USING btree (problem_id);
+ALTER TABLE ONLY public.topic
+    ADD CONSTRAINT topic_pkey PRIMARY KEY (id);
 
 
 --
--- Name: problem_attr_uidx; Type: INDEX; Schema: public; Owner: coder
+-- Name: problem_category_index; Type: INDEX; Schema: public; Owner: coder
 --
 
-CREATE UNIQUE INDEX problem_attr_uidx ON public.problem_attr USING btree (problem_id, classification);
+CREATE INDEX problem_category_index ON public.problem_category USING btree (category);
+
+
+--
+-- Name: problem_category_problem_idx; Type: INDEX; Schema: public; Owner: coder
+--
+
+CREATE INDEX problem_category_problem_idx ON public.problem_category USING btree (problem_id);
+
+
+--
+-- Name: problem_category_uidx; Type: INDEX; Schema: public; Owner: coder
+--
+
+CREATE UNIQUE INDEX problem_category_uidx ON public.problem_category USING btree (problem_id, category);
 
 
 --
@@ -224,11 +263,11 @@ CREATE INDEX problem_notes_pidx ON public.problem_notes USING btree (problem_id)
 
 
 --
--- Name: problem_attr problem_attr_problem_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: coder
+-- Name: problem_category problem_category_problem_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: coder
 --
 
-ALTER TABLE ONLY public.problem_attr
-    ADD CONSTRAINT problem_attr_problem_id_fkey FOREIGN KEY (problem_id) REFERENCES public.problems(id);
+ALTER TABLE ONLY public.problem_category
+    ADD CONSTRAINT problem_category_problem_id_fkey FOREIGN KEY (problem_id) REFERENCES public.problems(id);
 
 
 --

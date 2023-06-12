@@ -5,7 +5,8 @@ CREATE TABLE IF NOT EXISTS problems (
     title TEXT NOT NULL,
     title_slug TEXT NOT NULL,
     difficulty TEXT NOT NULL,
-    mastered boolean
+    mastered boolean,
+    bookmarked boolean
 );
 
 CREATE TABLE IF NOT EXISTS problem_notes (
@@ -16,7 +17,7 @@ CREATE TABLE IF NOT EXISTS problem_notes (
 
 CREATE INDEX problem_notes_pidx on problem_notes(problem_id);
 
-CREATE TYPE code_lang AS ENUM ('python', 'rust', 'golang');
+CREATE TYPE code_lang AS ENUM ('python', 'rust', 'golang', 'typescript', 'kotlin');
 
 CREATE TABLE IF NOT EXISTS problem_implementations (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -25,15 +26,15 @@ CREATE TABLE IF NOT EXISTS problem_implementations (
     implementation jsonb NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS problem_attr (
+CREATE TABLE IF NOT EXISTS problem_category (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     problem_id UUID NOT NULL REFERENCES problems (id),
-    classification TEXT NOT NULL
+    category TEXT NOT NULL
 );
 
-CREATE UNIQUE INDEX problem_attr_uidx on problem_attr (problem_id, classification);
-CREATE INDEX problem_attr_index on problem_attr (classification);
-CREATE INDEX problem_attr_problem_idx on problem_attr(problem_id);
+CREATE UNIQUE INDEX problem_category_uidx on problem_category (problem_id, category);
+CREATE INDEX problem_category_index on problem_category (category);
+CREATE INDEX problem_category_problem_idx on problem_category(problem_id);
 
 CREATE TABLE IF NOT EXISTS company (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -44,5 +45,15 @@ CREATE TABLE IF NOT EXISTS problem_to_company (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     problem_id UUID REFERENCES problems (ID),
     company_id UUID REFERENCES company (id)
+);
+CREATE TYPE topic_type AS ENUM ('algorithm', 'concept');
+
+CREATE TABLE IF NOT EXISTS topic (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    kind topic_type NOT NULL,
+    name TEXT NOT NULL,
+    description TEXT,
+    topic_category TEXT NOT NULL,
+    note jsonb
 );
 
