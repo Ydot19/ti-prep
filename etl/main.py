@@ -48,7 +48,7 @@ class ExtractTransformLoad:
             "problems": self.transformer.create_problems_table_data,
             "company": self.transformer.create_company_table_data,
             "problem_to_company": self.transformer.create_problem_to_company_table_data,
-            "problem_attr": self.transformer.create_problem_attr_table_data,
+            "problem_category": self.transformer.create_problem_category_table_data,
         }
 
         for table_name, df_generator in postgres_table_name_to_pandas_df.items():

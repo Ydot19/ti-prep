@@ -2,7 +2,7 @@ import unittest
 from dataclasses import dataclass
 from typing import List
 
-from leetcode_prep.domain.errors import (
+from api.domain.errors import (
     PGRepoError,
     NotFoundError,
     ClientError,

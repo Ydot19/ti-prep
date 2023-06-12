@@ -26,6 +26,8 @@ PY_API_DIR := $(shell pwd)/prep_api
 
 clean:
 	rm -rf ./bin/*
+	mkdir -p bin/
+
 
 install-python-prod-deps:
 	# install production dependencies
@@ -35,9 +37,10 @@ install-python-deps:
 	# install with dev dependencies
 	poetry install
 
-install-tools:
-	mkdir -p bin/
-	export GOBIN=$(TOOLS_PATH); cat tools.go | grep _ | awk -F'"' '{print $$2}' | xargs -tI % go install %
+install-go-deps:
+	export GOBIN=$(TOOLS_PATH); cat tools.go | grep _ | awk -F'("|//)' '{print $$NF " " $$2}' | xargs -tL 1 go install
+
+install-tools: clean
 	pnpm install twirp-ts --prefix ./bin
 	pnpm install @protobuf-ts/plugin@next --prefix ./bin
 

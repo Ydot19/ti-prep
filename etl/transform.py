@@ -1,7 +1,7 @@
 import pandas as pd
 import uuid
 from etl.extract import JsonDataReader
-from typing import TypeVar
+from typing import TypeVar, Self
 
 # TODO: Remove when https://peps.python.org/pep-0673/ is implemented in python 3.11 / 3.12
 TJsonDataTransformer = TypeVar("TJsonDataTransformer", bound="JsonDataTransformer")
@@ -14,7 +14,7 @@ class JsonDataTransformer:
         self.__json_data_as_df: pd.DataFrame = data
         self.__problems_df: [pd.DataFrame | None] = None
 
-    def initialize(self) -> TJsonDataTransformer:
+    def initialize(self) -> Self:
         """
         Initializes the data to the following format
         returns a dataframe in the following format
@@ -54,6 +54,7 @@ class JsonDataTransformer:
         """
         df = self.__problems_df[["problem_id", "title", "titleSlug", "difficulty"]]
         df.loc[:, "mastered"] = False
+        df.loc[:, "bookmarked"] = False
         df = df.rename({"problem_id": "id", "titleSlug": "title_slug"}, axis=1)
         df = df.drop_duplicates(subset=["id"])
         df = df.reset_index(drop=True)
@@ -85,9 +86,9 @@ class JsonDataTransformer:
         problem_to_company_df = problem_to_company_df.reset_index(drop=True)
         return problem_to_company_df[["id", "problem_id", "company_id"]]
 
-    def create_problem_attr_table_data(self) -> [pd.DataFrame | None]:
+    def create_problem_category_table_data(self) -> [pd.DataFrame | None]:
         """
-        Returns id, problem_id, classification.
+        Returns id, problem_id, category.
         Classification in this dataframe is the problem tag in leetcode
         :return:
         """
@@ -100,7 +101,7 @@ class JsonDataTransformer:
             problem_attr_df = pd.DataFrame.from_dict(problem_attr[0], orient="columns")
             problem_attr_df.loc[:, "problem_id"] = problem_id
             problem_attr_df = problem_attr_df[["problem_id", "name"]]
-            problem_attr_df = problem_attr_df.rename({"name": "classification"}, axis=1)
+            problem_attr_df = problem_attr_df.rename({"name": "category"}, axis=1)
             problem_attr_df.loc[:, "id"] = problem_attr_df.apply(
                 lambda _: uuid.uuid4(), axis=1
             )
@@ -111,4 +112,4 @@ class JsonDataTransformer:
             else:
                 df_combined_problem_attr = problem_attr_df
         df_combined_problem_attr = df_combined_problem_attr.reset_index(drop=True)
-        return df_combined_problem_attr[["id", "problem_id", "classification"]]
+        return df_combined_problem_attr[["id", "problem_id", "category"]]
