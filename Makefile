@@ -1,13 +1,25 @@
 TOOLS_PATH := $(shell pwd)/bin
 MIGRATE := $(TOOLS_PATH)/migrate
+UI_DIR := $(shell pwd)/ui
+ETL_DIR := $(shell pwd)/etl
+API_DIR := $(shell pwd)/api
+
+# GO
+export GOBIN=$(TOOLS_PATH)
+TWIRP_GO_CODEGEN_DIR :=  $(API_DIR)/codegen
 
 # Python
 export PYTHONPATH=$PYTHONPATH:$(pwd)
-export PATH := $(TOOLS_PATH):$(PATH):$(TOOLS_PATH)/node_modules/.bin
+export PATH := $(TOOLS_PATH):$(PATH):$(UI_DIR)/node_modules/.bin
+PY_CMD := poetry run
+PY_ETL_DIR := $(ETL_DIR)
+PY_TEST_DIR := $(shell pwd)/test
+PY_API_DIR := $(API_DIR)
 
 # Typescript
-PROTOC_GEN_TWIRP_BIN :="$(TOOLS_PATH)/node_modules/.bin/protoc-gen-twirp_ts"
-PROTOC_GEN_TS_BIN :="$(TOOLS_PATH)/node_modules/.bin/protoc-gen-ts"
+PROTOC_GEN_TWIRP_BIN :="$(UI_DIR)/node_modules/.bin/protoc-gen-twirp_ts"
+PROTOC_GEN_TS_BIN :="$(UI_DIR)/node_modules/.bin/protoc-gen-ts"
+TWIRP_TS_CODEGEN_DIR := $(UI_DIR)/src/codegen
 
 # PG Variables - see docker compose file
 export PG_DB_HOST ?= localhost
@@ -17,10 +29,6 @@ export PG_DB_USER ?= coder
 export PG_DB_PASSWORD ?= codes
 
 SCHEMA_FILENAME := leetcode_db_schema.sql
-PY_CMD := poetry run
-PY_ETL_DIR := $(shell pwd)/etl
-PY_TEST_DIR := $(shell pwd)/test
-PY_API_DIR := $(shell pwd)/prep_api
 
 .PHONY: codegen
 
@@ -37,23 +45,26 @@ install-python-deps:
 	# install with dev dependencies
 	poetry install
 
-install-go-deps:
-	export GOBIN=$(TOOLS_PATH); cat tools.go | grep _ | awk -F'("|//)' '{print $$NF " " $$2}' | xargs -tL 1 go install
+install-go-tools:
+	cat tools.go | grep _ | awk -F'("|//)' '{print $$NF " " $$2}' | xargs -tL 1 go install
 
-install-tools: clean
-	pnpm install twirp-ts --prefix ./bin
-	pnpm install @protobuf-ts/plugin@next --prefix ./bin
+install-ts-tools:
+	pnpm install twirp-ts --prefix ./ui
+	pnpm install @protobuf-ts/plugin@next --prefix ./ui
+
+install-tools: clean install-go-tools install-ts-tools
 
 codegen:
-	rm -rf codegen
-	mkdir -p codegen/go codegen/ts
-	protoc --twirp_out=./codegen/go --twirp_opt=paths=source_relative \
-        --go_out=./codegen/go --go_opt=paths=source_relative \
+	rm -rf $(TWIRP_GO_CODEGEN_DIR)
+	rm -rf $(TWIRP_TS_CODEGEN_DIR)
+	mkdir -p $(TWIRP_GO_CODEGEN_DIR) $(TWIRP_TS_CODEGEN_DIR)
+	protoc --twirp_out=$(TWIRP_GO_CODEGEN_DIR) --twirp_opt=paths=source_relative \
+        --go_out=$(TWIRP_GO_CODEGEN_DIR) --go_opt=paths=source_relative \
         --plugin=protoc-gen-ts=$(PROTOC_GEN_TS_BIN) \
 	    --plugin=protoc-gen-twirp_ts=$(PROTOC_GEN_TWIRP_BIN) \
         --ts_opt=generate_dependencies \
-		--ts_out=codegen/ts \
-		--twirp_ts_out=codegen/ts \
+		--ts_out=$(TWIRP_TS_CODEGEN_DIR) \
+		--twirp_ts_out=$(TWIRP_TS_CODEGEN_DIR) \
 		--proto_path=./proto ./proto/**/**/*.proto
 
 format-py:
