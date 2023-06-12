@@ -3,7 +3,7 @@ syntax = "proto3";
 import "model/v1/problem.proto";
 
 package rpc;
-option go_package = "github.com/Ydot19/ti-prep/codegen/go/rpc/v1";
+option go_package = "github.com/Ydot19/ti-prep/api/codegen/rpc/v1";
 
 service NotesService {
   rpc GetProblemCategories(GetProblemCategoriesRequest) returns (GetProblemCategoriesResponse) {}

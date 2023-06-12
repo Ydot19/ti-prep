@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package model;
-option go_package = "github.com/Ydot19/ti-prep/codegen/go/model/v1";
+option go_package = "github.com/Ydot19/ti-prep/api/codegen/model/v1";
 
 enum Difficulty {
   DIFFICULTY_UNKNOWN = 0;
