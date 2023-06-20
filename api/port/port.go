@@ -2,18 +2,37 @@ package port
 
 import (
 	"context"
+	protoModel "github.com/Ydot19/ti-prep/api/codegen/model/v1"
 	rpc "github.com/Ydot19/ti-prep/api/codegen/rpc/v1"
+	"github.com/Ydot19/ti-prep/api/interfaces"
+	"github.com/Ydot19/ti-prep/api/mapper"
 )
 
 type NotesService struct {
+	app interfaces.Application
 }
 
-func NewNotesService() rpc.NotesService {
-	return &NotesService{}
+func NewNotesService(app interfaces.Application) rpc.NotesService {
+	return &NotesService{
+		app: app,
+	}
 }
 
-func (n *NotesService) GetProblemCategories(ctx context.Context, request *rpc.GetProblemCategoriesRequest) (*rpc.GetProblemCategoriesResponse, error) {
-	return nil, nil
+func (n *NotesService) GetProblemCategories(ctx context.Context, req *rpc.GetProblemCategoriesRequest) (*rpc.GetProblemCategoriesResponse, error) {
+	result, err := n.app.GetProblemCategories(ctx, int(req.Limit), int(req.Offset))
+	if err != nil {
+		return nil, err
+	}
+
+	var resp []*protoModel.Category
+	for _, category := range result {
+		protoCategory := mapper.CategoryToProto(&category)
+		resp = append(resp, protoCategory)
+	}
+
+	return &rpc.GetProblemCategoriesResponse{
+		Details: resp,
+	}, nil
 }
 
 func (n *NotesService) GetProblemsByCategory(ctx context.Context, request *rpc.GetProblemsByCategoryRequest) (*rpc.GetProblemsByCategoryResponse, error) {

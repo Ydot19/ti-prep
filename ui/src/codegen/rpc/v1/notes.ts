@@ -22,28 +22,32 @@ export interface GetProblemCategoriesRequest {
      * @generated from protobuf field: int32 limit = 1;
      */
     limit: number;
+    /**
+     * @generated from protobuf field: int32 offset = 2;
+     */
+    offset: number;
 }
 /**
  * @generated from protobuf message rpc.GetProblemCategoriesResponse
  */
 export interface GetProblemCategoriesResponse {
     /**
-     * @generated from protobuf field: model.Category details = 1;
+     * @generated from protobuf field: repeated model.Category details = 1;
      */
-    details?: Category;
+    details: Category[];
 }
 /**
  * @generated from protobuf message rpc.GetProblemsByCategoryRequest
  */
 export interface GetProblemsByCategoryRequest {
     /**
-     * @generated from protobuf field: int32 pagination_start = 1;
+     * @generated from protobuf field: int32 limit = 1;
      */
-    paginationStart: number;
+    limit: number;
     /**
-     * @generated from protobuf field: int32 pagination_end = 2;
+     * @generated from protobuf field: int32 offset = 2;
      */
-    paginationEnd: number;
+    offset: number;
 }
 /**
  * @generated from protobuf message rpc.GetProblemsByCategoryResponse
@@ -154,11 +158,12 @@ export interface CreateOrUpdateAlgorithmResponse {
 class GetProblemCategoriesRequest$Type extends MessageType<GetProblemCategoriesRequest> {
     constructor() {
         super("rpc.GetProblemCategoriesRequest", [
-            { no: 1, name: "limit", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+            { no: 1, name: "limit", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 2, name: "offset", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<GetProblemCategoriesRequest>): GetProblemCategoriesRequest {
-        const message = { limit: 0 };
+        const message = { limit: 0, offset: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<GetProblemCategoriesRequest>(this, message, value);
@@ -171,6 +176,9 @@ class GetProblemCategoriesRequest$Type extends MessageType<GetProblemCategoriesR
             switch (fieldNo) {
                 case /* int32 limit */ 1:
                     message.limit = reader.int32();
+                    break;
+                case /* int32 offset */ 2:
+                    message.offset = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -187,6 +195,9 @@ class GetProblemCategoriesRequest$Type extends MessageType<GetProblemCategoriesR
         /* int32 limit = 1; */
         if (message.limit !== 0)
             writer.tag(1, WireType.Varint).int32(message.limit);
+        /* int32 offset = 2; */
+        if (message.offset !== 0)
+            writer.tag(2, WireType.Varint).int32(message.offset);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -201,11 +212,11 @@ export const GetProblemCategoriesRequest = new GetProblemCategoriesRequest$Type(
 class GetProblemCategoriesResponse$Type extends MessageType<GetProblemCategoriesResponse> {
     constructor() {
         super("rpc.GetProblemCategoriesResponse", [
-            { no: 1, name: "details", kind: "message", T: () => Category }
+            { no: 1, name: "details", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => Category }
         ]);
     }
     create(value?: PartialMessage<GetProblemCategoriesResponse>): GetProblemCategoriesResponse {
-        const message = {};
+        const message = { details: [] };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<GetProblemCategoriesResponse>(this, message, value);
@@ -216,8 +227,8 @@ class GetProblemCategoriesResponse$Type extends MessageType<GetProblemCategories
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* model.Category details */ 1:
-                    message.details = Category.internalBinaryRead(reader, reader.uint32(), options, message.details);
+                case /* repeated model.Category details */ 1:
+                    message.details.push(Category.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -231,9 +242,9 @@ class GetProblemCategoriesResponse$Type extends MessageType<GetProblemCategories
         return message;
     }
     internalBinaryWrite(message: GetProblemCategoriesResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* model.Category details = 1; */
-        if (message.details)
-            Category.internalBinaryWrite(message.details, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* repeated model.Category details = 1; */
+        for (let i = 0; i < message.details.length; i++)
+            Category.internalBinaryWrite(message.details[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -248,12 +259,12 @@ export const GetProblemCategoriesResponse = new GetProblemCategoriesResponse$Typ
 class GetProblemsByCategoryRequest$Type extends MessageType<GetProblemsByCategoryRequest> {
     constructor() {
         super("rpc.GetProblemsByCategoryRequest", [
-            { no: 1, name: "pagination_start", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
-            { no: 2, name: "pagination_end", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+            { no: 1, name: "limit", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 2, name: "offset", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<GetProblemsByCategoryRequest>): GetProblemsByCategoryRequest {
-        const message = { paginationStart: 0, paginationEnd: 0 };
+        const message = { limit: 0, offset: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<GetProblemsByCategoryRequest>(this, message, value);
@@ -264,11 +275,11 @@ class GetProblemsByCategoryRequest$Type extends MessageType<GetProblemsByCategor
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* int32 pagination_start */ 1:
-                    message.paginationStart = reader.int32();
+                case /* int32 limit */ 1:
+                    message.limit = reader.int32();
                     break;
-                case /* int32 pagination_end */ 2:
-                    message.paginationEnd = reader.int32();
+                case /* int32 offset */ 2:
+                    message.offset = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -282,12 +293,12 @@ class GetProblemsByCategoryRequest$Type extends MessageType<GetProblemsByCategor
         return message;
     }
     internalBinaryWrite(message: GetProblemsByCategoryRequest, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* int32 pagination_start = 1; */
-        if (message.paginationStart !== 0)
-            writer.tag(1, WireType.Varint).int32(message.paginationStart);
-        /* int32 pagination_end = 2; */
-        if (message.paginationEnd !== 0)
-            writer.tag(2, WireType.Varint).int32(message.paginationEnd);
+        /* int32 limit = 1; */
+        if (message.limit !== 0)
+            writer.tag(1, WireType.Varint).int32(message.limit);
+        /* int32 offset = 2; */
+        if (message.offset !== 0)
+            writer.tag(2, WireType.Varint).int32(message.offset);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

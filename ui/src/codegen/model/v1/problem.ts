@@ -33,10 +33,6 @@ export interface CategoryCompletion {
  */
 export interface Category {
     /**
-     * @generated from protobuf field: string id = 1;
-     */
-    id: string;
-    /**
      * @generated from protobuf field: string name = 2;
      */
     name: string;
@@ -96,19 +92,19 @@ export interface Problem {
  */
 export enum Difficulty {
     /**
-     * @generated from protobuf enum value: DIFFICULTY_UNKNOWN = 0;
+     * @generated from protobuf enum value: UNKNOWN = 0;
      */
     UNKNOWN = 0,
     /**
-     * @generated from protobuf enum value: DIFFICULTY_EASY = 1;
+     * @generated from protobuf enum value: EASY = 1;
      */
     EASY = 1,
     /**
-     * @generated from protobuf enum value: DIFFICULTY_MEDIUM = 2;
+     * @generated from protobuf enum value: MEDIUM = 2;
      */
     MEDIUM = 2,
     /**
-     * @generated from protobuf enum value: DIFFICULTY_HARD = 3;
+     * @generated from protobuf enum value: HARD = 3;
      */
     HARD = 3
 }
@@ -116,7 +112,7 @@ export enum Difficulty {
 class CategoryCompletion$Type extends MessageType<CategoryCompletion> {
     constructor() {
         super("model.CategoryCompletion", [
-            { no: 1, name: "difficulty", kind: "enum", T: () => ["model.Difficulty", Difficulty, "DIFFICULTY_"] },
+            { no: 1, name: "difficulty", kind: "enum", T: () => ["model.Difficulty", Difficulty] },
             { no: 2, name: "mastered", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 3, name: "total", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
@@ -177,7 +173,6 @@ export const CategoryCompletion = new CategoryCompletion$Type();
 class Category$Type extends MessageType<Category> {
     constructor() {
         super("model.Category", [
-            { no: 1, name: "id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "easy", kind: "message", T: () => CategoryCompletion },
             { no: 4, name: "medium", kind: "message", T: () => CategoryCompletion },
@@ -185,7 +180,7 @@ class Category$Type extends MessageType<Category> {
         ]);
     }
     create(value?: PartialMessage<Category>): Category {
-        const message = { id: "", name: "" };
+        const message = { name: "" };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<Category>(this, message, value);
@@ -196,9 +191,6 @@ class Category$Type extends MessageType<Category> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string id */ 1:
-                    message.id = reader.string();
-                    break;
                 case /* string name */ 2:
                     message.name = reader.string();
                     break;
@@ -223,9 +215,6 @@ class Category$Type extends MessageType<Category> {
         return message;
     }
     internalBinaryWrite(message: Category, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string id = 1; */
-        if (message.id !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.id);
         /* string name = 2; */
         if (message.name !== "")
             writer.tag(2, WireType.LengthDelimited).string(message.name);
