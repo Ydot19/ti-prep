@@ -11,7 +11,7 @@ func PostgresOptions() *postgres.Options {
 		Port:                         5432,
 		Username:                     "coder",
 		Password:                     "codes",
-		DBName:                       "leetcode",
+		DBName:                       "prep",
 		MaxOpenConns:                 20,
 		MaxIdleConns:                 10,
 		MaxConnectionLifetimeSeconds: 60,
