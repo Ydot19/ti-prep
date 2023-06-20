@@ -3,7 +3,7 @@ syntax = "proto3";
 import "model/v1/problem.proto";
 
 package rpc;
-option go_package = "github.com/Ydot19/ti-prep/codegen/go/rpc/v1";
+option go_package = "github.com/Ydot19/ti-prep/api/codegen/rpc/v1";
 
 service NotesService {
   rpc GetProblemCategories(GetProblemCategoriesRequest) returns (GetProblemCategoriesResponse) {}
@@ -20,15 +20,16 @@ service NotesService {
 
 message GetProblemCategoriesRequest {
   int32 limit = 1;
+  int32 offset = 2;
 }
 
 message GetProblemCategoriesResponse {
-  model.Category details  = 1;
+  repeated model.Category details  = 1;
 }
 
 message GetProblemsByCategoryRequest {
-  int32 pagination_start = 1;
-  int32 pagination_end = 2;
+  int32 limit = 1;
+  int32 offset = 2;
 }
 
 message GetProblemsByCategoryResponse {

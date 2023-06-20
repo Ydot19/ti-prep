@@ -1,13 +1,13 @@
 syntax = "proto3";
 
 package model;
-option go_package = "github.com/Ydot19/ti-prep/codegen/go/model/v1";
+option go_package = "github.com/Ydot19/ti-prep/api/codegen/model/v1";
 
 enum Difficulty {
-  DIFFICULTY_UNKNOWN = 0;
-  DIFFICULTY_EASY = 1;
-  DIFFICULTY_MEDIUM = 2;
-  DIFFICULTY_HARD = 3;
+  UNKNOWN = 0;
+  EASY = 1;
+  MEDIUM = 2;
+  HARD = 3;
 }
 
 message CategoryCompletion {
@@ -17,7 +17,6 @@ message CategoryCompletion {
 }
 
 message Category {
-  string id = 1;
   string name = 2;
   CategoryCompletion easy = 3;
   CategoryCompletion medium = 4;
