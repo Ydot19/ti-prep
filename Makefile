@@ -24,7 +24,7 @@ TWIRP_TS_CODEGEN_DIR := $(UI_DIR)/src/codegen
 # PG Variables - see docker compose file
 export PG_DB_HOST ?= localhost
 export PG_DB_PORT ?= 5432
-export PG_DB_NAME ?= leetcode
+export PG_DB_NAME ?= prep
 export PG_DB_USER ?= coder
 export PG_DB_PASSWORD ?= codes
 
@@ -105,13 +105,7 @@ start-etl:
 stop-etl:
 	docker-compose rm -s -v etl
 
-start-api:
-	docker-compose up --force-recreate --build -d api
-
-stop-api:
-	docker-compose rm -s -v api
-
-run-dev: up start-etl start-api # start all services for dev
+run-dev: up start-etl
 
 down:
 	docker-compose down
