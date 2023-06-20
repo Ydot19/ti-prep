@@ -20,11 +20,32 @@ services:
       timeout: 10s
       retries: 3
 
+  api:
+    container_name: "notes_api"
+    environment:
+      DB_HOST: db
+      DB_NAME: prep
+      DB_USER: coder
+      DB_PASSWORD: codes
+      DB_PORT: 5432
+      LISTEN_PORT: ":80"
+    ports:
+      - "8083:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: docker/go/Dockerfile
+    command: ./bin/api
+
   etl:
     container_name: "pg_etl"
     environment:
       - API_ENV=ci
       - DB_ENV_PREFIX=PG_DB
+    depends_on:
+      - db
     build:
       context: .
       dockerfile: docker/py/Dockerfile
