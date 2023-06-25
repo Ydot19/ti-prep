@@ -45,10 +45,10 @@ func (app *application) GetProblemCategories(ctx context.Context, limit, offset 
 			details.DifficultyEasy = easyDetails
 		}
 		if mediumDetails, ok := detailsMap[models.DIFFICULTY_MEDIUM]; ok {
-			details.DifficultyEasy = mediumDetails
+			details.DifficultyMedium = mediumDetails
 		}
 		if hardDetails, ok := detailsMap[models.DIFFICULTY_HARD]; ok {
-			details.DifficultyEasy = hardDetails
+			details.DifficultyHard = hardDetails
 		}
 
 		resp = append(resp, details)

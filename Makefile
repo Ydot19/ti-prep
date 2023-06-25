@@ -22,11 +22,11 @@ PROTOC_GEN_TS_BIN :="$(UI_DIR)/node_modules/.bin/protoc-gen-ts"
 TWIRP_TS_CODEGEN_DIR := $(UI_DIR)/src/codegen
 
 # PG Variables - see docker compose file
-export PG_DB_HOST ?= localhost
-export PG_DB_PORT ?= 5432
-export PG_DB_NAME ?= prep
-export PG_DB_USER ?= coder
-export PG_DB_PASSWORD ?= codes
+export DB_HOST ?= localhost
+export DB_PORT ?= 5432
+export DB_NAME ?= prep
+export DB_USER ?= coder
+export DB_PASSWORD ?= codes
 
 SCHEMA_FILENAME := leetcode_db_schema.sql
 
@@ -76,22 +76,22 @@ install-postgresql:
 start-postgresql:
 	mkdir -p ./pgdata
 	docker-compose up --force-recreate --build -d db
-	sh -c 'until $$(pg_isready -h ${PG_DB_HOST} -U ${PG_DB_USER} -p ${PG_DB_PORT} -q); do { printf '.'; sleep 1; };  done'
+	sh -c 'until $$(pg_isready -h ${DB_HOST} -U ${DB_USER} -p ${DB_PORT} -q); do { printf '.'; sleep 1; };  done'
 
 stop-postgresql:
 	docker-compose rm -s -v db
 
 create-db: start-postgresql
 	# psql must be installed
-	PGPASSWORD=${PG_DB_PASSWORD} psql -h ${PG_DB_HOST} -p ${PG_DB_PORT} -U ${PG_DB_USER} -c "drop database if exists ${PG_DB_NAME};"
-	PGPASSWORD=${PG_DB_PASSWORD} psql -h ${PG_DB_HOST} -p ${PG_DB_PORT} -U ${PG_DB_USER} -c "create database ${PG_DB_NAME};"
+	PGPASSWORD=${DB_PASSWORD} psql -h ${DB_HOST} -p ${DB_PORT} -U ${DB_USER} -c "drop database if exists ${DB_NAME};"
+	PGPASSWORD=${DB_PASSWORD} psql -h ${DB_HOST} -p ${DB_PORT} -U ${DB_USER} -c "create database ${DB_NAME};"
 
 database-schema:
-	PGPASSWORD=${PG_DB_PASSWORD} psql ${PG_DB_NAME} -h ${PG_DB_HOST} -p ${PG_DB_PORT} -U ${PG_DB_USER} -a -f db/${SCHEMA_FILENAME}
+	PGPASSWORD=${DB_PASSWORD} psql ${DB_NAME} -h ${DB_HOST} -p ${DB_PORT} -U ${DB_USER} -a -f db/${SCHEMA_FILENAME}
 
 migrate-db: create-db
-	$(MIGRATE) -path db/migrations -database "postgres://${PG_DB_USER}:${PG_DB_PASSWORD}@${PG_DB_HOST}:${PG_DB_PORT}/${PG_DB_NAME}?sslmode=disable" up
-	@PGPASSWORD=${PG_DB_PASSWORD} pg_dump -s -h ${PG_DB_HOST} -p ${PG_DB_PORT} -U ${PG_DB_USER}  ${PG_DB_NAME} > ./db/${SCHEMA_FILENAME}
+	$(MIGRATE) -path db/migrations -database "postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=disable" up
+	@PGPASSWORD=${DB_PASSWORD} pg_dump -s -h ${DB_HOST} -p ${DB_PORT} -U ${DB_USER}  ${DB_NAME} > ./db/${SCHEMA_FILENAME}
 
 
 up: create-db database-schema # brings up the database for unit and integration testing
@@ -102,10 +102,16 @@ database-data-load: # loads the database with actual data
 start-etl:
 	docker-compose up --force-recreate --build -d etl
 
-stop-etl:
-	docker-compose rm -s -v etl
+start-api:
+	docker-compose up --force-recreate --build -d api
 
-run-dev: up start-etl
+stop-api:
+	docker-compose rm -s -v -f api
+
+stop-etl:
+	docker-compose rm -s -v -f etl
+
+run-dev: up start-etl start-api
 
 down:
-	docker-compose down
+	docker-compose down --remove-orphans

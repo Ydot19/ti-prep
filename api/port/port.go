@@ -23,7 +23,6 @@ func (n *NotesService) GetProblemCategories(ctx context.Context, req *rpc.GetPro
 	if err != nil {
 		return nil, err
 	}
-
 	var resp []*protoModel.Category
 	for _, category := range result {
 		protoCategory := mapper.CategoryToProto(&category)

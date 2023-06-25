@@ -4,7 +4,7 @@ type Options struct {
 	Host                         string `env:"DB_HOST,default=localhost"`
 	Port                         int    `env:"DB_PORT,default=5432"`
 	Username                     string `env:"DB_USER,default=postgres"`
-	Password                     string `env:"DB_USER,default=postgres"`
+	Password                     string `env:"DB_PASSWORD,default=postgres"`
 	DBName                       string `env:"DB_NAME,default=postgres_db"`
 	MaxOpenConns                 int    `env:"DB_MAX_OPEN_CONN,default=20"`
 	MaxIdleConns                 int    `env:"DB_MAX_IDLE_CONN,default=10"`

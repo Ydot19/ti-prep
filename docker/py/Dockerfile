@@ -31,21 +31,3 @@ RUN poetry install --no-ansi
 
 CMD ["make", "database-data-load"]
 
-FROM python:3.11.2-bullseye as api
-ARG DB_HOST
-ARG DB_NAME
-ARG DB_USER
-ARG DB_PASSWORD
-ARG DB_PORT
-ENV PREP_DB_HOST=$DB_HOST \
-    PREP_DB_NAME=$DB_NAME \
-    PREP_DB_USER=$DB_USER \
-    PREP_DB_PASSWORD=$DB_PASSWORD \
-    PREP_DB_PORT=$DB_PORT
-
-WORKDIR code
-COPY --from=py-base /code /code
-COPY ./prep_api /code/prep_api
-
-CMD /code/.venv/bin/python -m uvicorn prep_api.port.router:server --host 0.0.0.0 --port $PORT
-
