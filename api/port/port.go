@@ -23,14 +23,15 @@ func (n *NotesService) GetProblemCategories(ctx context.Context, req *rpc.GetPro
 	if err != nil {
 		return nil, err
 	}
-	var resp []*protoModel.Category
-	for _, category := range result {
+	var categories []*protoModel.Category
+	for _, category := range result.Details {
 		protoCategory := mapper.CategoryToProto(&category)
-		resp = append(resp, protoCategory)
+		categories = append(categories, protoCategory)
 	}
 
 	return &rpc.GetProblemCategoriesResponse{
-		Details: resp,
+		Details: categories,
+		HasNext: result.HasNext,
 	}, nil
 }
 

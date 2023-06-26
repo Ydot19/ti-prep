@@ -35,6 +35,10 @@ export interface GetProblemCategoriesResponse {
      * @generated from protobuf field: repeated model.Category details = 1;
      */
     details: Category[];
+    /**
+     * @generated from protobuf field: bool has_next = 2;
+     */
+    hasNext: boolean;
 }
 /**
  * @generated from protobuf message rpc.GetProblemsByCategoryRequest
@@ -212,11 +216,12 @@ export const GetProblemCategoriesRequest = new GetProblemCategoriesRequest$Type(
 class GetProblemCategoriesResponse$Type extends MessageType<GetProblemCategoriesResponse> {
     constructor() {
         super("rpc.GetProblemCategoriesResponse", [
-            { no: 1, name: "details", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => Category }
+            { no: 1, name: "details", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => Category },
+            { no: 2, name: "has_next", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<GetProblemCategoriesResponse>): GetProblemCategoriesResponse {
-        const message = { details: [] };
+        const message = { details: [], hasNext: false };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<GetProblemCategoriesResponse>(this, message, value);
@@ -229,6 +234,9 @@ class GetProblemCategoriesResponse$Type extends MessageType<GetProblemCategories
             switch (fieldNo) {
                 case /* repeated model.Category details */ 1:
                     message.details.push(Category.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* bool has_next */ 2:
+                    message.hasNext = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -245,6 +253,9 @@ class GetProblemCategoriesResponse$Type extends MessageType<GetProblemCategories
         /* repeated model.Category details = 1; */
         for (let i = 0; i < message.details.length; i++)
             Category.internalBinaryWrite(message.details[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* bool has_next = 2; */
+        if (message.hasNext !== false)
+            writer.tag(2, WireType.Varint).bool(message.hasNext);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

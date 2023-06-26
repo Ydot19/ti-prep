@@ -25,6 +25,7 @@ message GetProblemCategoriesRequest {
 
 message GetProblemCategoriesResponse {
   repeated model.Category details  = 1;
+  bool has_next = 2;
 }
 
 message GetProblemsByCategoryRequest {
