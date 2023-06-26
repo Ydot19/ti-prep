@@ -1,7 +1,7 @@
 import os
 from typing import Dict, Callable
 import psycopg2
-from common.postgres.connection import DbConnectionConfig
+from etl.postgres.connection import DbConnectionConfig
 from etl.extract import JsonDataReader
 from etl.load import DataFramePGLoader
 from etl.transform import TJsonDataTransformer, JsonDataTransformer
@@ -13,13 +13,7 @@ class ExtractTransformLoad:
         self.transformer = None
         self.curr_dir = os.path.dirname(os.path.realpath(__file__))
         self.zipfile_path = f"{self.curr_dir}/data.zip"
-        connection_config = DbConnectionConfig(prefix="PG_DB_")
-        print(connection_config.DB_HOST)
-        print(connection_config.DB_NAME)
-        print(connection_config.DB_USER)
-        print(connection_config.DB_PASSWORD)
-        print(connection_config.DB_PORT)
-
+        connection_config = DbConnectionConfig(prefix="DB_")
         self.conn = psycopg2.connect(
             host=connection_config.DB_HOST,
             database=connection_config.DB_NAME,

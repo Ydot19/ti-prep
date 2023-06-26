@@ -6,7 +6,6 @@ RUN pip install "poetry==$POETRY_VERSION"
 WORKDIR /code
 
 COPY ../../pyproject.toml ./poetry.lock /code/
-COPY ../../common /code/common
 RUN poetry config virtualenvs.in-project true
 RUN poetry install --no-ansi --no-dev
 

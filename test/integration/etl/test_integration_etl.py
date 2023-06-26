@@ -3,7 +3,7 @@ import unittest
 import dotenv
 import psycopg2
 
-from common.postgres.connection import DbConnectionConfig
+from etl.postgres.connection import DbConnectionConfig
 from etl.extract import JsonDataReader
 from etl.load import DataFramePGLoader
 from etl.transform import JsonDataTransformer, TJsonDataTransformer
@@ -21,7 +21,7 @@ class TestLDataLoad(unittest.TestCase):
         cls.transformer: JsonDataTransformer = JsonDataTransformer(jdr=jdr)
         cls.transformer.initialize()
 
-        connection_config = DbConnectionConfig(prefix="PG_DB_")
+        connection_config = DbConnectionConfig(prefix="DB_")
         conn = psycopg2.connect(
             host=connection_config.DB_HOST,
             database=connection_config.DB_NAME,
