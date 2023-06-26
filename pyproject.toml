@@ -3,10 +3,6 @@ name = "leetcode_prep"
 version = "0.1.0"
 description = "preparation cli"
 authors = ["Ydot19 <abdalhalim.yaadata@gmail.com>"]
-packages = [
-    { include = "common" }
-]
-
 
 [tool.poetry.dependencies]
 python = "^3.11"
