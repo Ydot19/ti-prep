@@ -5,6 +5,7 @@ import (
 	"github.com/Ydot19/ti-prep/api/interfaces"
 	"github.com/Ydot19/ti-prep/api/models"
 	"math"
+	"sort"
 )
 
 type application struct {
@@ -19,43 +20,67 @@ func NewApplication(postgresRepository interfaces.PostgresRepository) interfaces
 	}
 }
 
-func (app *application) GetProblemCategories(ctx context.Context, limit, offset int) ([]models.Category, error) {
+// GetProblemCategories returns the list of problem categories given some offset
+func (app *application) GetProblemCategories(ctx context.Context, limit, offset int) (*models.ProblemCategories, error) {
 	res, err := app.pgRepo.GetCategoryDetails(ctx)
 	if err != nil {
 		return nil, err
 	}
 
-	resMap := make(map[string]map[models.Difficulty]*models.CategoryDetails)
-	for _, result := range res {
-		categoryDetails, ok := resMap[result.Name]
-		if !ok {
-			categoryDetails = make(map[models.Difficulty]*models.CategoryDetails)
+	resNameIdx := make(map[string]int)
+	counter := 0
+	var categories []models.Category
+	for _, categoryDetails := range res {
+		temp := categoryDetails
+		var category models.Category
+		var itemIdx int
+		if idx, ok := resNameIdx[categoryDetails.Name]; ok {
+			category = categories[idx]
+			itemIdx = idx
+		} else {
+			category = models.Category{
+				Name: categoryDetails.Name,
+			}
+			categories = append(categories, category)
+			resNameIdx[categoryDetails.Name] = counter
+			itemIdx = counter
+			counter += 1
 		}
-		categoryDetails[result.Difficulty] = &result
-		resMap[result.Name] = categoryDetails
+
+		if temp.Difficulty == models.DIFFICULTY_EASY {
+			category.DifficultyEasy = &temp
+		}
+
+		if temp.Difficulty == models.DIFFICULTY_MEDIUM {
+			category.DifficultyMedium = &temp
+		}
+
+		if temp.Difficulty == models.DIFFICULTY_HARD {
+			category.DifficultyHard = &temp
+		}
+		categories[itemIdx] = category
 	}
 
-	var resp []models.Category
-	for categoryName, detailsMap := range resMap {
-		details := models.Category{
-			Name: categoryName,
-		}
+	/*
+		Maps are not guaranteed to be sorted. This behavior of allowing sorting on arrays
+		was observed un-documented behavior that is not guaranteed to exist.
+	*/
+	sort.SliceStable(categories, func(i, j int) bool {
+		return categories[i].Name < categories[j].Name
+	})
 
-		if easyDetails, ok := detailsMap[models.DIFFICULTY_EASY]; ok {
-			details.DifficultyEasy = easyDetails
-		}
-		if mediumDetails, ok := detailsMap[models.DIFFICULTY_MEDIUM]; ok {
-			details.DifficultyMedium = mediumDetails
-		}
-		if hardDetails, ok := detailsMap[models.DIFFICULTY_HARD]; ok {
-			details.DifficultyHard = hardDetails
-		}
-
-		resp = append(resp, details)
-	}
-
-	size := len(resp)
+	size := len(categories)
 	start := math.Min(float64(size), float64(offset))
 	end := math.Min(start+float64(limit), float64(size))
-	return resp[int(start):int(end)], nil
+
+	var hasNext bool
+	if int(end) < size {
+		hasNext = true
+	}
+
+	resp := &models.ProblemCategories{
+		Details: categories[int(start):int(end)],
+		HasNext: hasNext,
+	}
+	return resp, nil
 }

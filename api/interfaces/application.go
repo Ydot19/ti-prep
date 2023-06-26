@@ -6,5 +6,5 @@ import (
 )
 
 type Application interface {
-	GetProblemCategories(ctx context.Context, limit, offset int) ([]models.Category, error)
+	GetProblemCategories(ctx context.Context, limit, offset int) (*models.ProblemCategories, error)
 }
