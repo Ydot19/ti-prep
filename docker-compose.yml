@@ -42,21 +42,21 @@ services:
   etl:
     container_name: "pg_etl"
     environment:
-      - API_ENV=ci
-      - DB_ENV_PREFIX=PG_DB
+      API_ENV: ci
+      DB_ENV_PREFIX: DB
+      DB_HOST: db
+      DB_NAME: prep
+      DB_USER: coder
+      DB_PASSWORD: codes
     depends_on:
       - db
     build:
       context: .
       dockerfile: docker/py/Dockerfile
       target: etl
-      args:
-        DB_HOST: db
-        DB_NAME: prep
-        DB_USER: coder
-        DB_PASSWORD: codes
-        DB_PORT: 5432
-
+    command: >
+      sh -c "make database-data-load
+      && touch ./finished.txt"
 
 networks:
   default:
