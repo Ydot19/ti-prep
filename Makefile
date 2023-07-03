@@ -97,13 +97,14 @@ migrate-db: create-db
 up: create-db database-schema # brings up the database for unit and integration testing
 
 database-data-load: # loads the database with actual data
-	poetry run etl-to-db
+	poetry run python ./etl/exec.py
 
 start-etl:
-	docker-compose up --force-recreate --build -d etl
+	docker-compose up --force-recreate --build etl
+	docker wait pg_etl
 
 start-api:
-	docker-compose up --force-recreate --build -d api
+	docker-compose up --force-recreate --build api
 
 stop-api:
 	docker-compose rm -s -v -f api

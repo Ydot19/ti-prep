@@ -61,8 +61,3 @@ class ExtractTransformLoad:
 
     def tear_down(self):
         os.remove(f"{self.curr_dir}/data.json")
-
-
-def start():
-    etl = ExtractTransformLoad()
-    etl.execute()
