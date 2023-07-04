@@ -14,11 +14,12 @@ import (
 func TestGetCategoryDetails(t *testing.T) {
 	// arrange
 	ctx := context.Background()
-	postgresRepo, err := adapter.NewPostgresRepository(fixtures.PostgresOptions())
+	db, err := adapter.NewDBConnection(fixtures.PostgresOptions())
 	require.NoError(t, err)
 
+	postgresRepo := adapter.NewRepositoryFactoryFromDB(db)
 	// act
-	resp, err := postgresRepo.GetCategoryDetails(ctx)
+	resp, err := postgresRepo.Autocommit().GetCategoryDetails(ctx)
 
 	// assert
 	require.NoError(t, err)

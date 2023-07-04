@@ -7,24 +7,20 @@ import (
 	"fmt"
 	"github.com/Ydot19/ti-prep/api/interfaces"
 	"github.com/Ydot19/ti-prep/api/models"
-	"github.com/Ydot19/ti-prep/pkg/postgres"
 	"github.com/Ydot19/ti-prep/pkg/sqlstore"
 )
 
-type postgresRepository struct {
-	store sqlstore.Store
+type PostgresRepository struct {
+	store sqlstore.Transaction
 }
 
-func NewPostgresRepository(opts *postgres.Options) (interfaces.PostgresRepository, error) {
-	db, err := postgres.NewConnection(opts)
-	if err != nil {
-		return nil, fmt.Errorf("failed to instantiate postgres repository: %w", err)
+func NewPostgresRepository(tx sqlstore.Transaction) interfaces.PostgresRepository {
+	return &PostgresRepository{
+		store: tx,
 	}
-	store := sqlstore.NewStore(db)
-	return &postgresRepository{store}, nil
 }
 
-func (repo *postgresRepository) GetCategoryDetails(ctx context.Context) ([]models.CategoryDetails, error) {
+func (repo *PostgresRepository) GetCategoryDetails(ctx context.Context) ([]models.CategoryDetails, error) {
 	rows, err := repo.store.CurrentTx().QueryxContext(ctx, SelectCategoryDetails)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {

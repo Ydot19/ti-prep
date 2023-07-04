@@ -13,11 +13,16 @@ type Options struct {
 }
 
 func Factory(opts *Options) (rpc.NotesService, error) {
-	pgRepo, err := adapter.NewPostgresRepository(&opts.PostgresOpts)
+	db, err := adapter.NewDBConnection(&opts.PostgresOpts)
+	if err != nil {
+		return nil, fmt.Errorf("failed to connect to database: %w", err)
+	}
+
+	pgRepoFactory := adapter.NewRepositoryFactoryFromDB(db)
 	if err != nil {
 		return nil, fmt.Errorf("failed to initialize postgres repository: %w", err)
 	}
-	application := app.NewApplication(pgRepo)
+	application := app.NewApplication(pgRepoFactory)
 	service := NewNotesService(application)
 	return service, err
 }
