@@ -9,20 +9,20 @@ import (
 )
 
 type application struct {
-	pgRepo interfaces.PostgresRepository
+	pgRepo interfaces.PostgresRepositoryFactory
 }
 
 var _ interfaces.Application = (*application)(nil)
 
-func NewApplication(postgresRepository interfaces.PostgresRepository) interfaces.Application {
+func NewApplication(pgRepo interfaces.PostgresRepositoryFactory) interfaces.Application {
 	return &application{
-		pgRepo: postgresRepository,
+		pgRepo: pgRepo,
 	}
 }
 
 // GetProblemCategories returns the list of problem categories given some offset
 func (app *application) GetProblemCategories(ctx context.Context, limit, offset int) (*models.ProblemCategories, error) {
-	res, err := app.pgRepo.GetCategoryDetails(ctx)
+	res, err := app.pgRepo.Autocommit().GetCategoryDetails(ctx)
 	if err != nil {
 		return nil, err
 	}
